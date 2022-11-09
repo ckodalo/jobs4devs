@@ -11,11 +11,11 @@ function App() {
   fetch('https://jsonplaceholder.typicode.com/todos')
   .then(response => response.json())
   .then(data => setCard(data)) 
-  }, [card]) 
+  }, []) 
 
   return (
     <div className='cards'>
-      <Card />
+      <Card cards={card}/>
     </div>
   )
 }

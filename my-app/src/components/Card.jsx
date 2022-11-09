@@ -1,12 +1,16 @@
 import React from 'react'
 
-function Card(cards) {
-  console.log(cards)
+function Card( {cards}) {
   return (
-    <div className='card'>
-      <h2>Title</h2>
-      <h3>Organization</h3>
-      <a href='google.com'>Location</a>
+    <div>
+      {cards.map((card) => (
+        <div key={card.id} className='card'>
+          <h2>{card.title}</h2>
+          <h2>{card.id}</h2>
+        </div>
+        
+      ))}
+      
     </div>
   )
 }

@@ -2,20 +2,26 @@
   box-sizing: border-box;
 }
 
-.cards {
+body {
+  margin: 0;
   display: flex;
-    /* justify-content: center; */
-    flex-wrap: wrap;
-    gap: 40px;
+  align-items: center;
+  color: black;
 }
 
-.card {
-  flex-basis: 225px;
-    box-shadow: 1px 1px 8px rgba(0, 0, 0, 0.25);
-    border-radius: 10px;
-    display: flex;
-    flex-direction: column;
-    padding: 13px;
-    padding-bottom: 20px;
-    background-color: white;
+.cards {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;  
+}
+
+.card {  
+  box-shadow: 1px 1px 8px rgba(0, 0, 0, 0.25);
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  flex: 0 0 auto;
+  padding: 13px;
+  padding-bottom: 20px;
+  background-color: white;
 }

@@ -8,7 +8,8 @@ function Job( {jobs}) {
       {jobs.map((job) => (
         <div key={job.id} className={"job-container job-container--borderleft"}>
           <div className="part1">
-          <div class = "position">{job.title}</div>
+          <div class = "position">
+            <a href = {job.location}>{job.title}</a></div>
           <div className="company">
           <span className = "cname">{job.recruiter}</span>
           </div>

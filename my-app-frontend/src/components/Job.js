@@ -7,10 +7,17 @@ function Job( {jobs}) {
     <div className="jobs">
       {jobs.map((job) => (
         <div key={job.id} className={"job-container job-container--borderleft"}>
-          <h2>{job.title}</h2>
-          <h2>{job.stack}</h2>
+          <div className="part1">
+          <div class = "position">{job.title}</div>
+          <div className="company">
+          <span className = "cname">{job.recruiter}</span>
+          </div>
         </div>
         
+        <div className="part2">
+        <span class = "details">{job.stack}</span>
+        </div>
+        </div>
       ))}
       
     </div>

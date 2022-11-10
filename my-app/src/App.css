@@ -11,8 +11,9 @@ body {
 
 .cards {
   display: flex;
-  justify-content: center;
-  flex-wrap: wrap;  
+  flex-direction: column;
+  align-items: center; 
+  margin-top:  calc(2vw + 2rem);
 }
 
 .card {  
@@ -20,8 +21,11 @@ body {
   border-radius: 10px;
   display: flex;
   flex-direction: column;
-  flex: 0 0 auto;
+  align-items: flex-start;
+  width: 70vw;
+  margin-left: 15rem;
   padding: 13px;
-  padding-bottom: 20px;
-  background-color: white;
+  padding-bottom: 1rem;
+  margin-bottom: 1.5rem;
+  background-color: white;  
 }

@@ -1,4 +1,4 @@
-.header {
+.footer {
     width: 50vw;
     height: 7vw;
     background-image: url(../images/bg-header-desktop.svg);
@@ -9,7 +9,11 @@
     border-radius: 2px;
     margin-left: 324px;
     margin-top: 20px;
-  
-    margin: 1 rem 0;
-    position: relative;
+    margin-bottom: 0px;
+   
+    display:flex; 
+    flex-direction:column; 
+    justify-content:space-between;
+    
+
   }

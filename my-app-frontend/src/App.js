@@ -10,7 +10,7 @@ function App() {
 
   useEffect(() => {
     
-    fetch('http://localhost:9292/jobs')
+    fetch('https://obscure-springs-19515.herokuapp.com/jobs')
     .then(response => response.json())
     .then(data => setJobs(data)) 
     }, []) 
@@ -18,7 +18,9 @@ function App() {
 
   return (
     <div>
+      <div className="header">JOBS 4 DEVS</div>
       <Job jobs={jobs}/>
+    <div className="footer"></div>
     </div>
   );
 }

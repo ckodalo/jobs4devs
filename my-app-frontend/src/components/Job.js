@@ -6,7 +6,7 @@ function Job( {jobs}) {
   return (
     <div className="jobs">
       {jobs.map((job) => (
-        <div key={job.id} className={"job-container job-container--borderleft"}>
+        <div key={job.id} className={"job-container"}>
           <div className="part1">
           <div class = "position">
             <a href = {job.location}>{job.title}</a></div>
@@ -16,7 +16,7 @@ function Job( {jobs}) {
         </div>
         
         <div className="part2">
-        <span class = "details">{job.stack}</span>
+        <span className= "details">{job.stack}</span>
         </div>
         </div>
       ))}

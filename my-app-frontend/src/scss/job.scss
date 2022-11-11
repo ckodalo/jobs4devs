@@ -2,8 +2,8 @@
 
 .job-container {
     width: 50vw;
-    height: 7vw;
-    background-color: #fff;
+    height: 4vw;
+    background-color: #e2dedb;
   
     display: flex;
     align-items: center;
@@ -13,7 +13,7 @@
     margin: 1 rem 0;
     position: relative;
   
-    box-shadow: 0px 4px 6px 4px rgba(91, 164, 164, 0.2);
+    // box-shadow: 0px 4px 6px 4px rgba(91, 164, 164, 0.2);
   
     @media only screen and (max-width: 375px) {
       flex-direction: column;

@@ -1,4 +1,6 @@
 import React, {useState} from "react";
+import Header from "./Header";
+import NavBar from "./NavBar";
 
 function AddJobForm() {
 
@@ -39,6 +41,9 @@ function AddJobForm() {
 } 
   return (
     <div>
+       <div className="header">
+        <Header/>
+        </div>
       <form id="form">
       <input type="text" name="title" placeholder="job-title"  onBlur={handleChange}/>
           <input type="text" name="recruiter" placeholder="recruitername"  onBlur={handleChange}/>

@@ -1,10 +1,12 @@
 import React from "react";
 import close from "./images/icon-remove.svg";
+import NavBar from "./NavBar";
 
 const Header = ({ keywords, removeKeywords, clearAll }) => {
   return (
-    <div className="header-container">
-      <ul>
+    <div>
+      <NavBar/>
+      {/* <ul>
         {keywords.map((key, id) => {
           return (
             <li key={id}>
@@ -18,7 +20,7 @@ const Header = ({ keywords, removeKeywords, clearAll }) => {
         <a href="#" onClick={() => clearAll()}>
           Clear
         </a>
-      </ul>
+      </ul> */}
     </div>
   );
 };

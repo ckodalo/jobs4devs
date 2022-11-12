@@ -1,12 +1,13 @@
 
 //import data from "./data.json";
-import Job from "./components/Job";
-import AddJobForm from "./components/AddJobForm";
+import Job from "./Job";
+import AddJobForm from "./AddJobForm";
 import { useState, useEffect } from "react";
-import Header from "./components/Header";
-import Search from "./components/Search";
+import Header from "./Header";
+import Search from "./Search";
+import NavBar from "./NavBar";
 
-function App() {
+function JobController() {
   const [jobs, setJobs] = useState([]);
 
   useEffect(() => {
@@ -19,12 +20,14 @@ function App() {
 
   return (
     <div>
-      <div className="header">JOBS 4 DEVS</div>
-      <AddJobForm className={"ui-segment"}/>
+      <div className="header">JOBS 4 DEVS
+        <Header/>
+      </div>
+      
       <Job jobs={jobs}/>
     <div className="footer"></div>
     </div>
   );
 }
 
-export default App;
+export default JobController;

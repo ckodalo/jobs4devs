@@ -28,7 +28,7 @@ function NavBar() {
   
         Home
         
-      </NavLink> /*
+      </NavLink> /
      <NavLink
         to="/AddJob"
         exact
@@ -39,13 +39,13 @@ function NavBar() {
      
         </NavLink> 
 
-        /* <NavLink
+        / <NavLink
           to="/Login"
           exact
           style={linkStyles}
           >
             Submit Job
-        </NavLink> */
+        </NavLink> /
 
         <NavLink
           to="/User"

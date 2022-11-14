@@ -1,4 +1,16 @@
-
+.icon-box {
+  /*   background-color: #6a89cc; */
+    display: inline-block;
+    padding: .5rem .8rem;
+    transition: all .2s ease-out;
+    display: flex;
+    flex-direction: column;
+    width: 60px;
+    margin-left: 300px;
+    margin-bottom:55px;
+    height: auto;
+    position: relative;
+  }
 
 .job-container {
     width: 50vw;

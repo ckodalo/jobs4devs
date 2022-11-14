@@ -34,12 +34,11 @@ function Login() {
   const [jobs, setJobs] = useState([])
 
   //fetch job(s) with a particular user id
-  //  useEffect(() => {
-
+     useEffect(() => {
   fetch(`https://obscure-springs-19515.herokuapp.com/jobs/${userData.id}`)
     .then(response => response.json())
     .then(data => setJobs(data))
-  //  }, []) 
+     },[]) 
 
 
   //form StateVar
@@ -70,8 +69,15 @@ function Login() {
       .then(data => console.log(data));
     }
 
-//DELETE FUNCTIONALITY
-function handleD
+// //DELETE FUNCTIONALITY
+// function handleDelete(e) {
+//   e.preventDefault();
+//   fetch(`https://obscure-springs-19515.herokuapp.com/jobs${id}`, {
+//     method: "DELETE",
+//  })
+//  .then(res => res.json())
+//  .then 
+// }
 
 
 
@@ -90,7 +96,7 @@ function handleD
         </div> 
         <div>
           <form id="form">
-            <input type="text" name="title" placeholder="job-title" onBlur={handleChange} />
+            <input type="text" name="title" placeholder="job-title" onBlur={handleChange}/>
             <input type="text" name="recruiter" placeholder="recruitername" onBlur={handleChange} />
             <input type="text" name="location" placeholder="enter url" onBlur={handleChange} />
             <input type="text" name="stack" placeholder="skills" onBlur={handleChange} />
@@ -109,7 +115,7 @@ function handleD
           <Header />
         </div> */}
 
-        <Job jobs={jobs} />
+        <Job jobs={jobs} IsLoggedIn={IsLoggedIn} />
 
 
         <div className="footer"></div>

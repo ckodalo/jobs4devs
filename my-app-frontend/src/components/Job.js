@@ -1,9 +1,52 @@
 import React, { useEffect, useState } from "react";
 
 
-function Job( {jobs}) {
+function Job( {jobs, IsLoggedIn}) {
+
   console.log(jobs)
+
+  // function handleChange(e) {
+  //   setFormData({
+  //     ...formData,
+  //     [e.target.name]: e.target.value,
+  //   })
+
+  // }
+
+  function handleDelete(e) {
+    e.preventDefault();
+  // useEffect (() => {
+    fetch(`https://obscure-springs-19515.herokuapp.com/jobs${e.id}`, {
+      method: "DELETE",
+   })
+   .then((res) => res.json())
+   .then((data) => console.log(data))
+  }
+// ), []}
+
   return (
+    IsLoggedIn ?
+    <div className="jobs">
+      {jobs.map((job) => (
+        <div key={job.id} className={"job-container"}>
+          <div className="part1">
+          <div class = "position">
+            <a href = {job.location}>{job.title}</a></div>
+          <div className="company">
+          <span className = "cname">{job.recruiter}</span>
+          </div>
+
+          <button onClick={handleDelete} className="icon-box">delete</button>
+        </div>
+        
+        <div className="part2">
+        <span className= "details">{job.stack}</span>
+        </div>
+        </div>
+      ))}
+      
+    </div>
+    :
     <div className="jobs">
       {jobs.map((job) => (
         <div key={job.id} className={"job-container"}>

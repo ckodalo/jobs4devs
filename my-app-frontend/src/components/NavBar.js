@@ -28,8 +28,8 @@ function NavBar() {
   
         Home
         
-      </NavLink>
-      <NavLink
+      </NavLink> /*
+     <NavLink
         to="/AddJob"
         exact
         style={linkStyles}
@@ -37,6 +37,22 @@ function NavBar() {
         >
         AddJob
      
+        </NavLink> 
+
+        /* <NavLink
+          to="/Login"
+          exact
+          style={linkStyles}
+          >
+            Submit Job
+        </NavLink> */
+
+        <NavLink
+          to="/User"
+          exact
+          style={linkStyles}
+          >
+            User
         </NavLink>
     </div>
   );

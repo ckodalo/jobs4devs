@@ -1,15 +1,17 @@
 import React, {useState} from "react";
 import Header from "./Header";
 import NavBar from "./NavBar";
+import User from "./User";
+import Login from "./Login";
 
-function AddJobForm() {
+function AddJobForm({userData}) {
 
   const [formData, setFormData] = useState([]);
 
-  const [newTitle, setTitle] = useState('');
-    const [newRecruiter, setRecruiter] = useState('');
-    const [newLocation, setLocation] = useState('');
-    const [newStack, setStack] = useState('')
+  // const [newTitle, setTitle] = useState('');
+  //   const [newRecruiter, setRecruiter] = useState('');
+  //   const [newLocation, setLocation] = useState('');
+  //   const [newStack, setStack] = useState('')
 
 
  
@@ -20,6 +22,28 @@ function AddJobForm() {
      })
     
    }
+//    function handleSubmit (e) {
+//     e.preventDefault()
+//     fetch(`https://obscure-springs-19515.herokuapp.com/users/${name}`)
+//         .then(res => res.json())
+//         .then(data => setUserData(data))
+//      console.log(userData)
+//      setIsLoggedIn(true)   
+//      console.log(IsLoggedIn)     
+//  return (
+//      // <AddJobForm userData = {userData}/>
+//      <div>
+//      <User userData={userData} IsLoggedIn = {IsLoggedIn}/> 
+//     </div>  
+
+//  )    
+       
+// }
+
+
+
+
+   
 
   function handlePost(e) {
      e.preventDefault();
@@ -39,11 +63,13 @@ function AddJobForm() {
   
 
 } 
-  return (
-    <div>
+
+return  (
+
+  <div>
        <div className="header">
         <Header/>
-        </div>
+        </div>      
       <form id="form">
       <input type="text" name="title" placeholder="job-title"  onBlur={handleChange}/>
           <input type="text" name="recruiter" placeholder="recruitername"  onBlur={handleChange}/>
@@ -53,6 +79,11 @@ function AddJobForm() {
             Add a Job
         </button>
       </form>
+ 
+       {/* <div>
+     <User userData={userData}/> 
+    </div>    */}
+
     </div>
   );
 }

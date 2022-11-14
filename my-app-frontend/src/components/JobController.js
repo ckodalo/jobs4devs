@@ -20,11 +20,13 @@ function JobController() {
 
   return (
     <div>
-      <div className="header">JOBS 4 DEVS
+      <div className="header">
         <Header/>
       </div>
       
-      <Job jobs={jobs}/>
+      <Job jobs={jobs}>
+      </Job>
+    
     <div className="footer"></div>
     </div>
   );

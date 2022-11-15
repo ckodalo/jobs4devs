@@ -96,7 +96,7 @@ function Login({ handleDelete}) {
       .then(res => res.json())
       .then(data => console.log(data))
       :
-      alert("name unrecognized")
+      alert("sorry, unrecognized name")
   }
 
   // //DELETE FUNCTIONALITY
@@ -129,7 +129,8 @@ function Login({ handleDelete}) {
   }
 
   function handlePostNewUser(e) {
-    e.preventDefault();
+    e.preventDefault()
+    console.log(UserFormData)
     fetch("https://obscure-springs-19515.herokuapp.com/users", {
       method: "POST",
       headers: {
@@ -191,7 +192,7 @@ function Login({ handleDelete}) {
         <h3>or Add Your Name</h3>
         <form id="form">
           <input type="text" name="name" placeholder="enter your name" onBlur={handleNewUserName} />
-          <button type="submit" className="submit" onSubmit={handlePostNewUser}>Add Your Name
+          <button type="submit" className="submit" onClick={handlePostNewUser}>Add Your Name
           </button>
         </form>
       </div>

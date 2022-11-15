@@ -44,7 +44,7 @@ function Job( {jobs, IsLoggedIn}) {
           <span className = "cname">{job.recruiter}</span>
           </div>
         
-          <button className="icon-box" onClick={handleDelete(job)} >delete</button>
+          <button className="icon-box" onClick={() => {handleDelete(job)}} >delete</button>
         </div>
         
         <div className="part2">

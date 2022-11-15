@@ -1,11 +1,7 @@
 
-//import data from "./data.json";
 import Job from "./Job";
-import AddJobForm from "./AddJobForm";
 import { useState, useEffect } from "react";
 import Header from "./Header";
-import Search from "./Search";
-import NavBar from "./NavBar";
 
 
 function JobController() {

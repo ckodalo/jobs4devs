@@ -1,8 +1,8 @@
 import React from "react";
-import close from "./images/icon-remove.svg";
+// import close from "./images/icon-remove.svg";
 import NavBar from "./NavBar";
 
-const Header = ({ keywords, removeKeywords, clearAll }) => {
+const Header = ({}) => {
   return (
     <div>
       <NavBar/>

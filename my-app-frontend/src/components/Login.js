@@ -1,8 +1,8 @@
 import React from 'react'
 import { useEffect, useState } from 'react'
-import User from './User'
+// import User from './User'
 import Header from './Header'
-import AddJobForm from './AddJobForm'
+// import AddJobForm from './AddJobForm'
 import Job from './Job'
 
 
@@ -14,7 +14,7 @@ function Login({ handleDelete}) {
   const [name, setName] = useState('')
   const [userData, setUserData] = useState({})
   const [IsLoggedIn, setIsLoggedIn] = useState(false)
-  const [newUser, setNewUser] = useState('')
+  // const [newUser, setNewUser] = useState('')
   const [user_id, setUser_Id] = useState(null)
   
   const [users, setUsers] = useState([])
@@ -75,7 +75,7 @@ function Login({ handleDelete}) {
     setFormData({
       ...formData,
       [e.target.name]: e.target.value,
-      ["user_id"]: user_id
+      "user_id": user_id
     })
    console.log(formData)
   }
@@ -85,7 +85,7 @@ function Login({ handleDelete}) {
   //Post Jobs functionality
   function handlePostJob(e) {
     e.preventDefault();
-  userData.id == user_id ?  
+  userData.id === user_id ?  
     fetch("https://obscure-springs-19515.herokuapp.com/jobs", {
       method: "POST",
       headers: {

@@ -1,78 +1,28 @@
+<h1 align="center">Project Owner: Calvin Kodalo</h1>
 
-a) **Jobs For Developers**
+<h1 align = "center">Project Name: JOBS4DEVS</h1>
 
-	By Gladiators
-	
+# Problem Statement
+Myself and hundreds of other students are few months away from finishing their Software Engineering Program at Moringa School. Many of us want to transition as quickly as possible into roles where we can put our newly acquired skills to use. However this is easier said than done. 
 
- b)     Table of Content
-      
-    •  [Description](#description)
-    •  [Installation Requirement](#Installation)
-    •  [Technology Used](#technology-used)
-    •  [Project Preview]
-    •  [Reference](#reference)
-    •  [License](#license)
-    •  [Authors Info](#author-Info)
-    
- c) **Description**
-     
-This is a website that shows a list of jobs for devleopers where recruiters can post job openings.
+# Solution
+This project is creating a job listing website to specifically list entry level opportunities in tech, startups and other comapnies. Users do not just go to the website to find roles they can apply to, but they also add jobs, including links to application pages.
 
- d) **Installation~Requirements**
+## MVP
 
-* Either a computer,phone,tablet.
+<ul>
+<li>
+Home page
+</li>
+<li>
+Submit a Job
+</li>
+</ul>
 
-* An access to the Internet.
+## How to Use the App
 
-* Fork and clone in the repository above, run *json-server db.json / json-server --watch db.json* to launch the application programming interface.
+When you open the app on this link https://starlit-seahorse-a2ab4a.netlify.app/ you get to a landing page. Here you choose whether to upload a pic or work of art from your computer to the marketplace. Alternatively, you can choose to go straight to the Marketplace and see the pics there. 
 
- e) **Installation Process**
-    Technology Used:-**
+You can switch through 3 pages on the navbar. However the content for this pages remain work in progress. Much of this remains work in progress.
 
-    * HTML - which was used to build the structure of the pages.
-      
-    * React – Used to add functionality to the web page.
-      
-    * CSS - which was used to style the pages. 
-    
-    * API  - which serves data to our application.
-    
-    *Ruby - which was used to run the back-end of our application.
-    
-    
-
-f) **Project Preview** <br>
-Single page website that aggregates tech-jobs.
-Recruiters can post job opennings.
-
-  
-    
-   
-      
-g) **Reference**
-
-* Tutorials-point
-* MDN JavaScript
-* W3 Schools
-* Scrimba
-
-
-
-h) **** License****
-
-MIT License
-
-Copyright (c) [2022] [Gladiators]
-
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this application and associated documentation files.
-
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
-
-
-
-i) **Authors Info**
-   Gladiators
-
-
+<p>This project is created by the owner of this github site</p>

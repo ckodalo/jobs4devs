@@ -1,33 +1,33 @@
-import React from 'react'
-import Job from './Job'
-import { useEffect, useState} from 'react'
-import Header from './Header'
+// import React from 'react'
+// import Job from './Job'
+// import { useEffect, useState} from 'react'
+// import Header from './Header'
 
-function User({userData}) {
+// function User({userData}) {
      
-    const [jobs, setJobs] = useState([])
+//     const [jobs, setJobs] = useState([])
     
-    //  useEffect(() => {
+//     //  useEffect(() => {
     
-        fetch(`https://obscure-springs-19515.herokuapp.com/jobs/${userData.id}`)
-        .then(response => response.json())
-        .then(data => setJobs(data)) 
-        //  }, []) 
+//         fetch(`https://obscure-springs-19515.herokuapp.com/jobs/${userData.id}`)
+//         .then(response => response.json())
+//         .then(data => setJobs(data)) 
+//         //  }, []) 
 
-  return     <div>
-       <div className="header">
-        <Header/>
-      </div>
+//   return     <div>
+//        <div className="header">
+//         <Header/>
+//       </div>
       
-      <Job jobs={jobs}/>
+//       <Job jobs={jobs}/>
   
     
-    <div className="footer"></div>
-    </div>
+//     <div className="footer"></div>
+//     </div>
   
-}
+// }
 
-export default User
+// export default User
 
 
 

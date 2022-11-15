@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 
 function Job( {jobs, IsLoggedIn}) {
 
-  console.log(jobs)
+  //console.log(jobs)
 
   // function handleChange(e) {
   //   setFormData({
@@ -13,16 +13,24 @@ function Job( {jobs, IsLoggedIn}) {
 
   // }
 
-  function handleDelete(e) {
-    e.preventDefault();
-  // useEffect (() => {
-    fetch(`https://obscure-springs-19515.herokuapp.com/jobs${e.id}`, {
-      method: "DELETE",
-   })
-   .then((res) => res.json())
-   .then((data) => console.log(data))
-  }
-// ), []}
+   function handleDelete(targetJob) {
+     console.log("cllic")
+     console.log(targetJob)
+   
+   //setJobs(jobs.filter(job => job !== targetJob))
+  
+ //useEffect (() => {
+      fetch(`https://obscure-springs-19515.herokuapp.com/jobs/${targetJob.id}`, {
+        method: "DELETE",
+        headers: {
+         "content-type": "Application/JSON"
+       },
+       body: JSON.stringify(targetJob)
+     })
+     .then((res) => res.json())
+     .then((data) => console.log(data))
+   }
+ // ), []}
 
   return (
     IsLoggedIn ?
@@ -35,8 +43,8 @@ function Job( {jobs, IsLoggedIn}) {
           <div className="company">
           <span className = "cname">{job.recruiter}</span>
           </div>
-
-          <button onClick={handleDelete} className="icon-box">delete</button>
+        
+          <button className="icon-box" onClick={handleDelete(job)} >delete</button>
         </div>
         
         <div className="part2">

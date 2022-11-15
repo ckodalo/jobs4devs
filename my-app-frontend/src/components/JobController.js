@@ -7,8 +7,11 @@ import Header from "./Header";
 import Search from "./Search";
 import NavBar from "./NavBar";
 
+
 function JobController() {
   const [jobs, setJobs] = useState([]);
+
+  
 
   useEffect(() => {
     
@@ -17,6 +20,25 @@ function JobController() {
     .then(data => setJobs(data)) 
     }, []) 
 
+   
+  //   function handleDelete(targetJob) {
+  //     console.log("cllic")
+  //     console.log(targetJob)
+     
+  //   setJobs(jobs.filter(job => job !== targetJob))
+  
+  //     // useEffect (() => {
+  //       fetch(`https://obscure-springs-19515.herokuapp.com/jobs/${targetJob.id}`, {
+  //         method: "DELETE",
+  //         headers: {
+  //          "content-type": "Application/JSON"
+  //        },
+  //        body: JSON.stringify(targetJob)
+  //      })
+  //      .then((res) => res.json())
+  //      .then((data) => console.log(data))
+  //    }
+  //  // ), []}
 
   return (
     <div>
@@ -24,8 +46,8 @@ function JobController() {
         <Header/>
       </div>
       
-      <Job jobs={jobs}>
-      </Job>
+      <Job jobs={jobs} setJobs = {setJobs}/>
+  
     
     <div className="footer"></div>
     </div>

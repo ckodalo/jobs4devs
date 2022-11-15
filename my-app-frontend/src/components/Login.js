@@ -6,39 +6,63 @@ import AddJobForm from './AddJobForm'
 import Job from './Job'
 
 
-function Login() {
-  
- //LOGIN FUNCTIONALITY
- 
+function Login({ handleDelete}) {
+
+  //LOGIN FUNCTIONALITY
+
   //login constants
   const [name, setName] = useState('')
   const [userData, setUserData] = useState({})
   const [IsLoggedIn, setIsLoggedIn] = useState(false)
+  const [newUser, setNewUser] = useState('')
+  const [user_id, setUser_Id] = useState(null)
+  
+  const [users, setUsers] = useState([])
+    
+    useEffect (() => {
+        fetch("https://obscure-springs-19515.herokuapp.com/users")
+         .then(res => res.json())
+         .then(data => setUsers(data))
+    }, [])
 
   //let userData
 
   //fetches users with name == user input
+  const  targetUser = users.find(user => {
+    if (user.name === name) {
+      return true;
+    }
+  
+    return false;
+  });
+  
+
   function handleSubmit(e) {
-    e.preventDefault()
+    console.log("clicked")
+  targetUser ?
+    
     fetch(`https://obscure-springs-19515.herokuapp.com/users/${name}`)
       .then(res => res.json())
       .then(data => setUserData(data))
-    console.log(userData)
-    setIsLoggedIn(true)
-    console.log(IsLoggedIn)
+      .then(setIsLoggedIn(true))
+    // console.log(userData)
+      
+    // console.log(IsLoggedIn)
+    :
+    alert("sorry, unrecognized name")
   }
 
-//GET FUNCTIONALITY
+  //GET FUNCTIONALITY
 
   //state for holding jobs.json
   const [jobs, setJobs] = useState([])
 
   //fetch job(s) with a particular user id
-     useEffect(() => {
-  fetch(`https://obscure-springs-19515.herokuapp.com/jobs/${userData.id}`)
-    .then(response => response.json())
-    .then(data => setJobs(data))
-     },[]) 
+  useEffect(() => {
+    fetch(`https://obscure-springs-19515.herokuapp.com/jobs/${userData.id}`)
+      .then(response => response.json())
+      .then(data => setJobs(data))
+  }, [userData])
 
 
   //form StateVar
@@ -46,18 +70,22 @@ function Login() {
 
   //stores input value into StateVar
   function handleChange(e) {
+
+    setUser_Id(userData.id)
     setFormData({
       ...formData,
       [e.target.name]: e.target.value,
+      ["user_id"]: user_id
     })
-
+   console.log(formData)
   }
 
- // POST FUNCTIONALITY
+  // POST FUNCTIONALITY
 
   //Post Jobs functionality
-  function handlePost(e) {
+  function handlePostJob(e) {
     e.preventDefault();
+  userData.id == user_id ?  
     fetch("https://obscure-springs-19515.herokuapp.com/jobs", {
       method: "POST",
       headers: {
@@ -66,18 +94,20 @@ function Login() {
       body: JSON.stringify(formData),
     })
       .then(res => res.json())
-      .then(data => console.log(data));
-    }
+      .then(data => console.log(data))
+      :
+      alert("name unrecognized")
+  }
 
-// //DELETE FUNCTIONALITY
-// function handleDelete(e) {
-//   e.preventDefault();
-//   fetch(`https://obscure-springs-19515.herokuapp.com/jobs${id}`, {
-//     method: "DELETE",
-//  })
-//  .then(res => res.json())
-//  .then 
-// }
+  // //DELETE FUNCTIONALITY
+  // function handleDelete(e) {
+  //   e.preventDefault();
+  //   fetch(`https://obscure-springs-19515.herokuapp.com/jobs${id}`, {
+  //     method: "DELETE",
+  //  })
+  //  .then(res => res.json())
+  //  .then 
+  // }
 
 
 
@@ -86,21 +116,46 @@ function Login() {
   //     fetch(`https://obscure-springs-19515.herokuapp.com/jobs/${name}`)
   //         .then(response => response.json())
   //         .then(data => console.log(data)) 
+
   // })
+   const [UserFormData, setUserFormData] = useState([])
+
+  function handleNewUserName(e) {
+    setUserFormData({
+      ...UserFormData,
+      [e.target.name]: e.target.value,
+    })
+
+  }
+
+  function handlePostNewUser(e) {
+    e.preventDefault();
+    fetch("https://obscure-springs-19515.herokuapp.com/users", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(UserFormData),
+    })
+      .then(res => res.json())
+      .then(data => console.log(data));
+  }
 
   return (
     IsLoggedIn ?
       <div>
-         <div className="header">
+        <div className="header">
           <Header />
-        </div> 
+        </div>
         <div>
+        
           <form id="form">
-            <input type="text" name="title" placeholder="job-title" onBlur={handleChange}/>
+            <input type="text" name="title" placeholder="job-title" onBlur={handleChange} />
             <input type="text" name="recruiter" placeholder="recruitername" onBlur={handleChange} />
             <input type="text" name="location" placeholder="enter url" onBlur={handleChange} />
             <input type="text" name="stack" placeholder="skills" onBlur={handleChange} />
-            <button type="submit" id="submit" onClick={handlePost}>
+            {/* <input type="integer" name="UserID" onBlur={handleChange}/> */}
+            <button type="submit" className="submit" onClick={handlePostJob}>
               Add a Job
             </button>
           </form>
@@ -114,26 +169,31 @@ function Login() {
         {/* <div className="header">
           <Header />
         </div> */}
-
-        <Job jobs={jobs} IsLoggedIn={IsLoggedIn} />
+        <Job jobs={jobs} IsLoggedIn={IsLoggedIn} handleDelete={handleDelete} />
 
 
         <div className="footer"></div>
       </div>
       :
-      <div>
+      <div >
         <div className="header">
-          <h1>Please Enter Your Name to Login</h1>
+
           <Header />
         </div>
+        
+        <h3>Enter Your Name to Post a Job</h3>
         <form id="form">
           <input type="text" name="name" placeholder="enter your name" onBlur={(e) => setName(e.target.value)} />
-          <button type="submit" id="submit" onClick={handleSubmit}>Login
+          <button type="submit" className="submit" onClick={handleSubmit}>Login
           </button>
         </form>
         {/* <User userData={userData} IsLoggedIn = {IsLoggedIn}/> */}
-
-
+        <h3>or Add Your Name</h3>
+        <form id="form">
+          <input type="text" name="name" placeholder="enter your name" onBlur={handleNewUserName} />
+          <button type="submit" className="submit" onSubmit={handlePostNewUser}>Add Your Name
+          </button>
+        </form>
       </div>
   )
 }

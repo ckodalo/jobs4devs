@@ -2,7 +2,7 @@ import React from "react";
 // import close from "./images/icon-remove.svg";
 import NavBar from "./NavBar";
 
-const Header = ({}) => {
+function Header() {
   return (
     <div>
       <NavBar/>
@@ -23,6 +23,6 @@ const Header = ({}) => {
       </ul> */}
     </div>
   );
-};
+}
 
 export default Header;

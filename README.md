@@ -21,8 +21,10 @@ Submit a Job
 
 ## How to Use the App
 
-When you open the app on this link https://starlit-seahorse-a2ab4a.netlify.app/ you get to a landing page. Here you choose whether to upload a pic or work of art from your computer to the marketplace. Alternatively, you can choose to go straight to the Marketplace and see the pics there. 
+When you open the app on this link http://jobs4devs.vercel.app/ you get to a page listing jobs. These jobs are added either by a user or Admin to the database hosted at https://obscure-springs-19515.herokuapp.com/ 
 
-You can switch through 3 pages on the navbar. However the content for this pages remain work in progress. Much of this remains work in progress.
+When you click on a link it takes you to the application page for that job. Users can add a job by clicking on the submit a job navlink. However they need to log in by entering their name. If their name is not recognized they will have to add it first. 
+
+Once they are logged in, a user can add and delete a job. 
 
 <p>This project is created by the owner of this github site</p>

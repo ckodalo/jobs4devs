@@ -77,7 +77,7 @@ function AllJobs() {
         <div key={job.id} className={"job-container"}>
            {/* <hr className={"line"}/> */}
           <div className="part1">
-          <div class = "position">
+          <div className = "position">
             <a href = {job.location}>{job.title}</a></div>
           <div className="company">
           <span className = "cname">{job.recruiter}</span>

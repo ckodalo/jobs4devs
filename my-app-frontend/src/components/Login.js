@@ -5,7 +5,7 @@ import Header from './Header'
 // import AddJobForm from './AddJobForm'
 // import Job from './AllJobs'
 import UserActions from './UserActions'
-import {Navigate} from 'react-router-dom'
+// import {Navigate} from 'react-router-dom'
 
 
 function Login() {
@@ -14,46 +14,49 @@ function Login() {
 
   //login constants
   const [name, setName] = useState('')
-  const [userData, setUserData] = useState({})
+   const [userData, setUserData] = useState({})
   const [IsLoggedIn, setIsLoggedIn] = useState(false)
   // const [newUser, setNewUser] = useState('')
-  const [user_id, setUser_Id] = useState(null)
+  // // const [user_id, setUser_Id] = useState(null)
   
    const [users, setUsers] = useState([])
     
-   useEffect (() => {
+    useEffect (() => {
         fetch("https://obscure-springs-19515.herokuapp.com/users")
          .then(res => res.json())
          .then(data => setUsers(data))
-    }, [])
+     }, [])
 
-  //let userData
+  //  let userData
 
   //check if ther is a user with that name in the db
-  const  targetUser = users.find(user => {
-    if (user.name === name) {
-      return true;
-    }
+  // const  targetUser = users.find(user => {
+  //   if (user.name === name) {
+  //     return true;
+  //   }
   
-    return false;
-  });
+  //   return false;
+  // });
   
 
   function handleSubmit(e) {
-     e.preventDefault()
+   
+      e.preventDefault()
+     console.log(users)
     //  console.log("submitted")
-    targetUser ?
+    // targetUser ?
     
-     fetch(`https://obscure-springs-19515.herokuapp.com/users/${name}`)
-       .then(res => res.json())
-       .then(data => setUserData(data))
-       .then(setIsLoggedIn(true))
-      .then(console.log(userData))
-      
-     // console.log(IsLoggedIn)
-    
-     :
-     alert("sorry, unrecognized name")
+    users.find(user => {
+      if (user.name === name) {
+        setUserData(user)
+        setIsLoggedIn(true)
+        return user;
+      }
+      alert("sorry, unrecognized name")
+      ;});
+    console.log(userData)
+ 
+  
   }
 
   //GET FUNCTIONALITY
@@ -145,7 +148,7 @@ function Login() {
       .then(res => res.json())
       .then(data => console.log(data));
   }
-
+console.log(userData)
   return (
     // IsLoggedIn ?
     //   <div>
@@ -195,9 +198,9 @@ function Login() {
         </div>
         
         <h3>Enter Your Name to Post a Job</h3>
-        <form id="form">
+        <form id="form" onSubmit={handleSubmit}>
           <input type="text" name="name" placeholder="enter your name" onBlur={(e) => setName(e.target.value)} />
-          <button type="click" className="submit" onClick={handleSubmit}>Login
+          <button type="submit" className="submit" >Login
           </button>
         </form>
         {/* <User userData={userData} IsLoggedIn = {IsLoggedIn}/> */}

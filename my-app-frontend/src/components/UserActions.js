@@ -2,12 +2,10 @@ import React from 'react'
 import { useEffect, useState } from 'react'
 // import User from './User'
 import Header from './Header'
-// import AddJobForm from './AddJobForm'
-import Job from './AllJobs'
 
 
 function UserActions({userData}) {
-
+  console.log(userData)
   //LOGIN FUNCTIONALITY
 
   //login constants
@@ -59,10 +57,11 @@ function UserActions({userData}) {
 
   //fetch job(s) with a particular user id
   useEffect(() => {
+    console.log(userData)
     fetch(`https://obscure-springs-19515.herokuapp.com/jobs/${userData.id}`)
       .then(response => response.json())
       .then(data => setUserJobs(data))
-  }, [userData])
+  }, [])
 
 
   //form StateVar
@@ -171,11 +170,11 @@ function UserActions({userData}) {
         <div className="jobs">
       {userJobs.map((job) => (
         <div key={job.id} className={"job-container"}>
-          <div className="part1">
-          <div class = "position">
+          <div className={"part1"}>
+          <div className = {"position"}>
             <a href = {job.location}>{job.title}</a></div>
-          <div className="company">
-          <span className = "cname">{job.recruiter}</span>
+          <div className={"company"}>
+          <span className = {"cname"}>{job.recruiter}</span>
           </div>
           <button type="button" className="icon-box" onClick={handleDelete} >delete</button>
         </div>

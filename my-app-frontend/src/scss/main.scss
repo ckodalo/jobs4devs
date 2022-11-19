@@ -25,14 +25,16 @@ html {
   font-size: 15px;
   font-weight: 500;
   box-sizing: border-box;
+ 
 }
 
 body {
   font-family: "Spartan", sans-serif;
   background-color: var(--background-color);
-  padding-left: 20px;
-  padding-right: 20px;
-
+  // padding-left: 20px;
+  // padding-right: 20px;
+  width: 500px;
+  margin: 50px auto 100px auto;
 }
 
 @media only screen and (max-width: 375px) {

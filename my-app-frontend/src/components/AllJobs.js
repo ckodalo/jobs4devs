@@ -69,10 +69,10 @@ function AllJobs() {
     // </div>
     // :
     <div>
-    <div className="header">
+    <div className="header-container">
         <Header/>
       </div>
-    <div className="jobs">
+    <div>
       {allJobs.map((job) => (
         <div key={job.id} className={"job-container"}>
            {/* <hr className={"line"}/> */}
@@ -92,7 +92,9 @@ function AllJobs() {
       ))}
       
     </div>
-    <div className="footer"></div>
+    <div className="footer">
+      <p>jobs4devs 2022</p>
+    </div>
     </div>
   )
 }

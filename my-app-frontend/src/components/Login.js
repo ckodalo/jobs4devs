@@ -184,7 +184,7 @@ function Login() {
         </div>
         :
       <div>
-        <div className="header">
+        <div className="header-container">
 
           <Header />
         </div>

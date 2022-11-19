@@ -8,9 +8,9 @@ const linkStyles = {
    width: "auto",
    padding: "2px",
    margin: "6px 6px px 120px",
-  
+    textAlign: 'center',
    textDecoration: "none",
-   color: "white",
+  //  color: "999999",
  };
 
 function NavBar() {

@@ -17,7 +17,6 @@ function Login() {
    const [userData, setUserData] = useState({})
   const [IsLoggedIn, setIsLoggedIn] = useState(false)
   // const [newUser, setNewUser] = useState('')
-  // // const [user_id, setUser_Id] = useState(null)
   
    const [users, setUsers] = useState([])
     
@@ -27,33 +26,30 @@ function Login() {
          .then(data => setUsers(data))
      }, [])
 
-  //  let userData
-
-  //check if ther is a user with that name in the db
-  // const  targetUser = users.find(user => {
-  //   if (user.name === name) {
-  //     return true;
-  //   }
-  
-  //   return false;
-  // });
-  
 
   function handleSubmit(e) {
    
-      e.preventDefault()
-     console.log(users)
-    //  console.log("submitted")
-    // targetUser ?
-    
-    users.find(user => {
-      if (user.name === name) {
-        setUserData(user)
+     const loggedUser = users.find(user => {return user.name === name})
+
+     if (loggedUser) {
+        setUserData(loggedUser)
         setIsLoggedIn(true)
-        return user;
-      }
-      alert("sorry, unrecognized name")
-      ;});
+     }
+     else {
+      alert("unrecognized name")
+     }
+
+    //  loggedUser ? (setUserData(loggedUser), setIsLoggedIn(true)) : alert("unrecognized")
+    // users.find(user => {
+    //   if (user.name === name) {
+    //     setUserData(user)
+    //     setIsLoggedIn(true)
+    //    return user 
+    //   }
+    //   else {
+    //   alert("sorry, unrecognized name")
+    //   }
+    //   });
     console.log(userData)
  
   
@@ -63,13 +59,6 @@ function Login() {
 
   //state for holding jobs.json
   // const [jobs, setJobs] = useState([])
-
-  // //fetch job(s) with a particular user id
-  // useEffect(() => {
-  //   fetch(`https://obscure-springs-19515.herokuapp.com/jobs/${userData.id}`)
-  //     .then(response => response.json())
-  //     .then(data => setJobs(data))
-  // }, [userData])
 
 
   //form StateVar
@@ -125,30 +114,33 @@ function Login() {
   //         .then(data => console.log(data)) 
 
   // })
-   const [UserFormData, setUserFormData] = useState([])
+   const [newUserData, setNewUserData] = useState([])
 
-  function handleNewUserName(e) {
-    setUserFormData({
-      ...UserFormData,
-      [e.target.name]: e.target.value,
-    })
-
+   function handleNewUserName(e) {
+    console.log(e.target.value)
+     setNewUserData({
+       ...newUserData,
+       [e.target.name]: e.target.value,
+     })
+     console.log(newUserData)
   }
 
-  function handlePostNewUser(e) {
-     e.preventDefault()
-    console.log(UserFormData)
-    fetch("https://obscure-springs-19515.herokuapp.com/users", {
-      method: "POST",
+   function handlePostNewUser(e) {
+      e.preventDefault()
+    console.log(newUserData)
+     fetch("https://obscure-springs-19515.herokuapp.com/users", {
+       method: "POST",
       headers: {
-        "Content-Type": "application/json",
+         "Content-Type": "application/json",
       },
-      body: JSON.stringify(UserFormData),
-    })
-      .then(res => res.json())
+       body: JSON.stringify(newUserData),
+   })
+       .then(res => res.json())
       .then(data => console.log(data));
-  }
-console.log(userData)
+    
+  alert("success")
+    }
+ console.log(userData)
   return (
     // IsLoggedIn ?
     //   <div>
@@ -205,9 +197,9 @@ console.log(userData)
         </form>
         {/* <User userData={userData} IsLoggedIn = {IsLoggedIn}/> */}
         <h3>or Add Your Name</h3>
-        <form id="form">
+        <form id="form" onSubmit={handlePostNewUser}>
           <input type="text" name="name" placeholder="enter your name" onBlur={handleNewUserName} />
-          <button type="submit" className="submit" onSubmit={handlePostNewUser}>Add Your Name
+          <button type="submit" className="submit" >Add Your Name
           </button>
         </form>
      

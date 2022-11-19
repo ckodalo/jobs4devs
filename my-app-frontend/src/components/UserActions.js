@@ -63,7 +63,7 @@ function UserActions({userData}) {
       .then(data => setUserJobs(data))
   }, [])
 
-
+console.log(userJobs)
   //form StateVar
   const [formData, setFormData] = useState([]);
 
@@ -93,7 +93,12 @@ function UserActions({userData}) {
       body: JSON.stringify(formData),
     })
       .then(res => res.json())
-      .then(data => console.log(data))
+      .then(data => setUserJobs({
+        ...userJobs,
+        data
+      }))
+
+      
       :
       alert("sorry, unrecognized name")
   }

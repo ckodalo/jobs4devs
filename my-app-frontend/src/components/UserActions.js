@@ -161,9 +161,9 @@ console.log(userJobs)
             <input type="text" name="location" placeholder="enter url" onBlur={handleChange} />
             <input type="text" name="stack" placeholder="skills" onBlur={handleChange} />
             {/* <input type="integer" name="UserID" onBlur={handleChange}/> */}
-            {/* <button type="submit" className="submit" onClick={handlePostJob}>
+             <button type="submit" className="submit" onClick={handlePostJob}>
               Add a Job
-            </button> */}
+            </button>
           </form>
 
           {/* <div>
@@ -186,7 +186,7 @@ console.log(userJobs)
         
         <div className="part2">
         <span className= "details">{job.stack}</span>
-        <button type="button" onClick={handleDelete} >delete</button>
+        <button type="button" className ={"icon-box"} onClick={handleDelete} >delete</button>
         </div>
         </div>
       ))}

@@ -93,7 +93,7 @@ function AllJobs() {
       
     </div>
     <div className="footer">
-      <p>jobs4devs 2022</p>
+      <p>ikoKazi 2022</p>
     </div>
     </div>
   )

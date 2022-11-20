@@ -1,16 +1,4 @@
-.icon-box {
-  /*   background-color: #6a89cc; */
-    display: inline-block;
-    padding: .5rem .8rem;
-    transition: all .2s ease-out;
-    display: flex;
-    flex-direction: column;
-    width: 60px;
-    margin-left: 300px;
-    margin-bottom:55px;
-    height: auto;
-    position: relative;
-  }
+
 
   // .line {
   //   border: 0.5px solid #e45909;
@@ -40,6 +28,20 @@
       padding-bottom: 1rem;
       margin-bottom: 2rem;
     }
+
+    .icon-box {
+  /*   background-color: #6a89cc; */
+    display: inline-block;
+    padding: .5rem .4rem;
+    transition: all .2s ease-out;
+    display: flex;
+    flex-direction: column;
+    width: 50px;
+    margin-left: 300px;
+    margin-bottom:55px;
+    height: auto;
+    // position: relative;
+  }
   
     .logo {
       display: flex;

@@ -7,7 +7,6 @@ function AllJobs() {
 
   const [allJobs, setAllJobs] = useState([]);
 
-  
 
   useEffect(() => {
     
@@ -79,13 +78,13 @@ function AllJobs() {
           <div className="part1">
           <div className = "position">
             <a href = {job.location}>{job.title}</a></div>
-          <div className="company">
-          <span className = "cname">{job.recruiter}</span>
+          <div>
+           <span className="details" >{job.stack}</span>
           </div>
         </div>
         
         <div className="part2">
-        <span className= "details">{job.stack}</span>
+        <span className= "details">{job.recruiter}</span>
         </div>
         </div>
        

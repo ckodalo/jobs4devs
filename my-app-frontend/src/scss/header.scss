@@ -1,14 +1,15 @@
 .header-container {
-    //  display: flex;
-    //  flex-direction: column;
+    display: flex;
+      flex-direction: row;
        //align-items: center;
     //  margin-top: calc(2vw + -4rem);
-  //    width: 100%;
+     width: 100%;
   //  margin: 0px auto;
   //  margin-top: 30px;
   // text-align: center;
   font-family: 'Lato', sans-serif;
-   width: 500px;
+  //  width: 500px;
+  justify-items: flex-end;
    margin: 50px auto 25px auto;
   position: relative;
   color: hsl(180, 8%, 52%);
@@ -18,7 +19,7 @@
         margin-bottom: 1rem;
       }
   
-      width: 70vw;
+       width: 70vw;
       background-color: #fff;
   
       display: flex;

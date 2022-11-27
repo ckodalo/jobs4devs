@@ -12,7 +12,7 @@
   --filter-table: hsl(180, 31%, 95%);
   --dark-greyish: hsl(180, 8%, 52%);
   --very-dark-greyish: hsl(180, 14%, 20%);
-
+  
 }
 
 *,
@@ -28,25 +28,26 @@ html {
   font-weight: 500;
   box-sizing: border-box;
 
+  
 }
 
-body {
+#body {
   font-family: "Spartan", sans-serif;
   background-color: var(--background-color);
   //  padding-left: 20px;
   // padding-right: 20px;
-  width: 500px;
+  width: 50%;
   
     margin: 50px auto 100px auto;
 }
 
-@media only screen and (min-width: 250px) and (max-width : 750px) {
+@media only screen and (min-width: 300px) and (max-width : 750px) {
    html {
      font-size: 0.75rem;
     // width: 100%;
    }
 
-   body {
+   #body {
       width: 100%;
      min-width: 100%;
      padding: 0;

@@ -67,7 +67,7 @@ function AllJobs() {
       
     // </div>
     // :
-    <div>
+    <div id="body">
     <div className="header-container">
         <Header/>
       </div>
@@ -84,7 +84,9 @@ function AllJobs() {
         </div>
         
         <div className="part2">
-        <span className= "details">{job.recruiter}</span>
+          <div className="details">
+        <span>{job.recruiter}</span>
+        </div>
         </div>
         </div>
        

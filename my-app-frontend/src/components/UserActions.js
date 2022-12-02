@@ -104,14 +104,17 @@ console.log(userJobs)
   }
 
    //DELETE FUNCTIONALITY
-   function handleDelete(e) {
+   function handleDelete(targetJob) {
+     const modifiedJobs = userJobs.filter((job) => job !== targetJob) 
+
     // e.stopPropagation()
-    console.log(" i was clicked")
-    //  e.preventDefault();
-    //  fetch(`https://obscure-springs-19515.herokuapp.com/jobs${id}`, {
-    //    method: "DELETE",
-    // })
-    // .then(res => res.json())
+     console.log(targetJob)
+    //e.preventDefault();
+    fetch(`https://obscure-springs-19515.herokuapp.com/jobs/${targetJob.id}`, {
+        method: "DELETE",
+     })
+     //.then(res => res.json())
+     setUserJobs(modifiedJobs)
     // .then 
    }
 
@@ -186,7 +189,9 @@ console.log(userJobs)
         
         <div className="part2">
         <span className= "details">{job.stack}</span>
-        <button type="button" className ={"icon-box"} onClick={handleDelete} >delete</button>
+        <button type="button" className ={"icon-box"} onClick={(e) => {
+          e.preventDefault()
+          handleDelete(job)}} >delete</button>
         </div>
         </div>
       ))}

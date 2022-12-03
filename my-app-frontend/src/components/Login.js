@@ -127,6 +127,7 @@ function Login() {
 
    function handlePostNewUser(e) {
       e.preventDefault()
+   
     console.log(newUserData)
      fetch("https://obscure-springs-19515.herokuapp.com/users", {
        method: "POST",
@@ -136,11 +137,11 @@ function Login() {
        body: JSON.stringify(newUserData),
    })
        .then(res => res.json())
-      .then(data => console.log(data));
-    
-  alert("success")
+      .then(data => users.push(data));
+  alert("success: now you can login")
+  console.log(users)
     }
- console.log(userData)
+ 
   return (
     // IsLoggedIn ?
     //   <div>

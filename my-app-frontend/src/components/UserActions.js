@@ -8,14 +8,27 @@ function UserActions({user}) {
 
   // const [user_id, setUser_Id] = useState(null)
   const [userJobs, setUserJobs] = useState([])
-
+ console.log(user)
   //fetch job(s) with a particular user id
-  useEffect(() => {
-    console.log(user)
-    fetch(`https://obscure-springs-19515.herokuapp.com/users/${user.id}`)
-      .then(response => response.json())
-      .then(data => setUserJobs(data))
-  }, [])
+  // useEffect(() => {
+  //   console.log(user)
+    
+  //   fetch(`http://127.0.0.1:3000/users/${user.id}`)
+   
+  //     .then(response => response.json())
+  //     .then(data => setUserJobs(data))
+  // }, [])
+
+
+    //  useEffect(() => {
+    //      fetch("http://127.0.0.1:3000/me").then((response) => {
+    //        if (response.ok) {
+    //        response.json().then((user) => setUser(user));
+    //        }
+    //      });
+    //    }, []);
+
+  
 
 console.log(userJobs)
   //form StateVar

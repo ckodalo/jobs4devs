@@ -1,17 +1,25 @@
 
-import React, {useState} from "react";
+import React, {useState, useEffect} from "react";
 import { Routes, Route } from "react-router-dom";
 // import { Switch, Route } from "react-router-dom";
 import JobController from "./components/JobController";
-import AddJobForm from "./components/AddJobForm";
-import NavBar from "./components/NavBar.js"
+import NavBar from "./components/NavBar";
 import Login from "./components/Login";
-import User from "./components/UserActions";
 import UserActions from "./components/UserActions";
 
 function App() {
   const [user, setUser] = useState(null)
+  console.log(user)
+
+
   
+     useEffect(() => {
+         fetch("http://127.0.0.1:3000/me").then((response) => {
+           if (response.ok) {
+             response.json().then((user) => setUser(user));
+           }
+         });
+       }, []);
   return (
     <>
     <main>
@@ -19,21 +27,21 @@ function App() {
       <Routes>
         <Route path="/" element = {<JobController/>}> 
         </Route>
-      </Routes>
-      {user ? (
-        <Routes>
-        <Route path="/UserActions" element = {<UserActions/>}>
+    </Routes> 
+      
+       {user ? (
+       <Routes>
+        <Route path="/UserActions" element = {<UserActions user={user}  setUser={setUser}/>}>
         </Route>
         </Routes>
-      ) : (
-        <Routes>
-        <Route path="/Login" element = {<Login setUser={setUser}/>}>   
-        </Route>
       
-      <Route path="/User" element = {<User/>}>
-      </Route>
+      ) : ( 
+      <Routes> 
+        <Route path="/Login" element = {<Login user={user} setUser={setUser}/>}>   
+        </Route>
       </Routes>
       )}
+      
     </main>
     </>
   )

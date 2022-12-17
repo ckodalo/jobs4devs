@@ -4,14 +4,19 @@ import User from './UserActions'
 import Header from './Header'
 import AddJobForm from './AddJobForm'
 import Job from './Job'
+import { useNavigate } from 'react-router'
 
 
-function Login({setUser}) {
+
+
+function Login({user, setUser}) {
   const [name, setName] = useState("");
   const [password, setPassword] = useState("")
   // const [passwordConfirmation, setPasswordConfirmation] = useState("");
   const [formData, setFormData] = useState([])
-
+  const navigate =useNavigate()
+  // const [loggedUser, setLoggedUser] = useState(null) 
+ 
   function handleSubmit(e) {
     e.preventDefault();
     fetch("http://127.0.0.1:3000/login", {
@@ -24,8 +29,13 @@ function Login({setUser}) {
       .then((r) => {
         if (r.ok) {
           r.json().then((data) => setUser(data));
+         console.log(user)
+          navigate('/UserActions')
+        
         }
+        
       }); 
+    
   }
 
   function handleNewUserName(e) {

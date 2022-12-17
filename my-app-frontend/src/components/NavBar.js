@@ -13,7 +13,7 @@ const linkStyles = {
    color: "white",
  };
 
-function NavBar() {
+function NavBar({user}) {
 
   return (
     <div>

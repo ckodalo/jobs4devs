@@ -39,15 +39,46 @@ function JobController({user}) {
   //  // ), []}
 
   return (
-    <div>
+    <div id ="body">
 
       
-      <Job jobs={jobs} setJobs = {setJobs}/>
+      {/* <Job jobs={jobs} setJobs = {setJobs}/> */}
+
+   
+    {/* <div className="header-container">
+        <Header/>
+      </div> */}
+    <div>
+      {jobs.map((job) => (
+        <div key={job.id} className={"job-container"}>
+           {/* <hr className={"line"}/> */}
+          <div className="part1">
+          <div className = "position">
+            <a href = {job.location}>{job.title}</a></div>
+          <div>
+           <span className="details" >{job.stack}</span>
+          </div>
+        </div>
+        
+        <div className="part2">
+          <div className="details">
+        <span>{job.recruiter}</span>
+        </div>
+        </div>
+        </div>
+       
+      ))}
+      
+    </div>
+    <div className="footer">
+      <p>ikoKazi 2022</p>
+    </div>
+    </div>
   
     
-    <div className="footer"></div>
-    </div>
+   
   );
 }
 
 export default JobController;
+

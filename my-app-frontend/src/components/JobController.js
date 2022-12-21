@@ -40,9 +40,7 @@ function JobController({user}) {
 
   return (
     <div>
-     {/* <div className="header">
-          <NavBar />
-        </div> */}
+
       
       <Job jobs={jobs} setJobs = {setJobs}/>
   

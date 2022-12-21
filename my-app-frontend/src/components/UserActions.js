@@ -84,9 +84,7 @@ console.log(filteredUserJobs)
 
   return (
       <div>
-        {/* <div className="header">
-          <NavBar />
-        </div> */}
+        
         <div>
         
           <form id="form">

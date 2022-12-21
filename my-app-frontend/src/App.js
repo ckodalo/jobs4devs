@@ -23,7 +23,7 @@ function App() {
   return (
     <>
     <main>
-      <div className="header">
+      <div className="header-container">
        <NavBar  user={user} setUser={setUser} />  
        </div>
       <Routes>

@@ -4,12 +4,12 @@ import { NavLink } from "react-router-dom";
   //some styling navbar 
   const linkStyles = {
     display: "inline-block",
-     width: "auto",
-     padding: "2px",
-     margin: "6px 6px px 120px",
-    
-     textDecoration: "none",
-     color: "white",
+   width: "auto",
+   padding: "2px",
+   margin: "6px 6px px 120px",
+    textAlign: 'center',
+   textDecoration: "none",
+  //  color: "999999",
    };
   
 

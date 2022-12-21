@@ -83,51 +83,61 @@ console.log(filteredUserJobs)
    }
 
   return (
-      <div>
-        
-        <div>
-        
-          <form id="form">
-            <input type="text" name="title" placeholder="job-title" onBlur={handleChange} />
-            <input type="text" name="recruiter" placeholder="recruitername" onBlur={handleChange} />
-            <input type="text" name="location" placeholder="enter url" onBlur={handleChange} />
-            <input type="text" name="stack" placeholder="skills" onBlur={handleChange} />
-            {/* <input type="integer" name="UserID" onBlur={handleChange}/> */}
-             <button type="submit" className="submit" onClick={handlePostJob}>
-              Add a Job
-            </button>
-          </form>
+    <div>
+    {/* <div className="header-container">
+      <Header />
+    </div> */}
+    <div>
+    
+      <form id="form">
+        <input type="text" name="title" placeholder="job-title" onBlur={handleChange} />
+        <input type="text" name="recruiter" placeholder="recruitername" onBlur={handleChange} />
+        <input type="text" name="location" placeholder="enter url" onBlur={handleChange} />
+        <input type="text" name="stack" placeholder="skills" onBlur={handleChange} />
+        {/* <input type="integer" name="UserID" onBlur={handleChange}/> */}
+         <button type="submit" className="submit" onClick={handlePostJob}>
+          Add a Job
+        </button>
+      </form>
 
-        </div>
+      {/* <div>
+ <User userData={userData}/> 
+</div>    */}
 
-        <div className="jobs">
-      {filteredUserJobs.map((job) => (
-        <div key={job.id} className={"job-container"}>
-          <div className={"part1"}>
-          <div className = {"position"}>
-            <a href = {job.location}>{job.title}</a></div>
-          <div className={"company"}>
-          <span className = {"cname"}>{job.recruiter}</span>
-          </div>
-         
-        </div>
-        
-        <div className="part2">
-        <span className= "details">{job.stack}</span>
-        <button type="button" className ={"icon-box"} onClick={(e) => {
-          e.preventDefault()
-          handleDelete(job)}} >delete</button>
-        </div>
-        </div>
-      ))}
-      
     </div>
+
+    <div className="jobs">
+  {filteredUserJobs.map((job) => (
+    <div key={job.id} className={"job-container"}>
+      <div className={"part1"}>
+      <div className = {"position"}>
+        <a href = {job.location}>{job.title}</a></div>
+      <div className={"company"}>
+      <span className = {"cname"}>{job.recruiter}</span>
+      </div>
+     
+    </div>
+    
+    <div className="part2">
+    <span className= "details">{job.stack}</span>
+    <button type="button" className ={"icon-box"} onClick={(e) => {
+      e.preventDefault()
+      handleDelete(job)}} >delete</button>
+    </div>
+    </div>
+  ))}
+  
+</div>
+
+   
+
+
+    <div className="footer"></div>
+  </div>
 
        
 
 
-        <div className="footer"></div>
-      </div>
   )
 }
 

@@ -1,19 +1,21 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 
-
-//some styling navbar 
-const linkStyles = {
-  display: "inline-block",
-   width: "auto",
-   padding: "2px",
-   margin: "6px 6px px 120px",
+  //some styling navbar 
+  const linkStyles = {
+    display: "inline-block",
+     width: "auto",
+     padding: "2px",
+     margin: "6px 6px px 120px",
+    
+     textDecoration: "none",
+     color: "white",
+   };
   
-   textDecoration: "none",
-   color: "white",
- };
 
 function NavBar({user}) {
+
+
 
   return (
     <div>
@@ -29,31 +31,26 @@ function NavBar({user}) {
         Home
         
       </NavLink> |
-     {/* <NavLink
-        to="/AddJob"
-        exact
-        style={linkStyles}
-        
-        >
-        AddJob
-     
-        </NavLink>  */}
-
+  
+        {user ?    
          <NavLink
-          to="/Login"
+          to="/UserActions"
+    
           exact
           style={linkStyles}
           >
             Submit Job
         </NavLink> 
+      :
+      <NavLink
+      to="/Login"
 
-        {/* <NavLink
-          to="/User"
-          exact
-          style={linkStyles}
-          >
-            User
-        </NavLink> */}
+      exact
+      style={linkStyles}
+      >
+        Submit
+    </NavLink>
+      }
     </div>
   );
 }

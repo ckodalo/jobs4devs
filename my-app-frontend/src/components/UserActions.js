@@ -2,6 +2,7 @@ import React from 'react'
 import { useEffect, useState } from 'react'
 // import User from './User'
 import Header from './Header'
+import NavBar from './NavBar'
 
 
 function UserActions({user}) {
@@ -10,27 +11,23 @@ function UserActions({user}) {
   const [userJobs, setUserJobs] = useState([])
  console.log(user)
   //fetch job(s) with a particular user id
-  // useEffect(() => {
-  //   console.log(user)
+   useEffect(() => {
     
-  //   fetch(`http://127.0.0.1:3000/users/${user.id}`)
+     fetch("http://127.0.0.1:3000/jobs")
    
-  //     .then(response => response.json())
-  //     .then(data => setUserJobs(data))
-  // }, [])
+       .then(response => response.json())
+       .then(data => setUserJobs(data))
+   }, [])
 
 
-    //  useEffect(() => {
-    //      fetch("http://127.0.0.1:3000/me").then((response) => {
-    //        if (response.ok) {
-    //        response.json().then((user) => setUser(user));
-    //        }
-    //      });
-    //    }, []);
+
+//filter jobs by id 
+    const filteredUserJobs = userJobs.filter(job => job.user_id == user.id)
+
 
   
 
-console.log(userJobs)
+console.log(filteredUserJobs)
   //form StateVar
   const [formData, setFormData] = useState([]);
 
@@ -87,9 +84,9 @@ console.log(userJobs)
 
   return (
       <div>
-        <div className="header-container">
-          <Header />
-        </div>
+        {/* <div className="header">
+          <NavBar />
+        </div> */}
         <div>
         
           <form id="form">
@@ -106,7 +103,7 @@ console.log(userJobs)
         </div>
 
         <div className="jobs">
-      {userJobs.map((job) => (
+      {filteredUserJobs.map((job) => (
         <div key={job.id} className={"job-container"}>
           <div className={"part1"}>
           <div className = {"position"}>

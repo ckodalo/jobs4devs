@@ -23,24 +23,26 @@ function App() {
   return (
     <>
     <main>
-       <NavBar user={user} setUser={setUser} />  
+      <div className="header">
+       <NavBar  user={user} setUser={setUser} />  
+       </div>
       <Routes>
-        <Route path="/" element = {<JobController/>}> 
+        <Route path="/" element = {<JobController user={user}/>}> 
         </Route>
     </Routes> 
       
-       {user ? (
+       {/* {user ? ( */}
        <Routes>
         <Route path="/UserActions" element = {<UserActions user={user}  setUser={setUser}/>}>
         </Route>
         </Routes>
       
-      ) : ( 
+      {/* ) : (  */}
       <Routes> 
         <Route path="/Login" element = {<Login user={user} setUser={setUser}/>}>   
         </Route>
       </Routes>
-      )}
+      {/* )} */}
       
     </main>
     </>

@@ -5,7 +5,7 @@ import Header from './Header'
 import AddJobForm from './AddJobForm'
 import Job from './Job'
 import { useNavigate } from 'react-router'
-
+import NavBar from './NavBar'
 
 
 
@@ -70,6 +70,9 @@ function Login({user, setUser}) {
 
   return (
     <div>
+      <div className="header">
+          <NavBar />
+        </div>
     <h3>Enter Your Name to Post a Job</h3>
     <form onSubmit={handleSubmit}>
       <input

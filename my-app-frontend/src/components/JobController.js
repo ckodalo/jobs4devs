@@ -1,17 +1,15 @@
 
-//import data from "./data.json";
 import Job from "./Job";
-import AddJobForm from "./AddJobForm";
 import { useState, useEffect } from "react";
-import Header from "./Header";
-import Search from "./Search";
+//import Header from "./Header";
+//import Search from "./Search";
 import NavBar from "./NavBar";
 
 
-function JobController() {
+function JobController({user}) {
   const [jobs, setJobs] = useState([]);
 
-  
+  console.log(user)
 
   useEffect(() => {
     
@@ -42,9 +40,9 @@ function JobController() {
 
   return (
     <div>
-      <div className="header">
-        <Header/>
-      </div>
+     {/* <div className="header">
+          <NavBar />
+        </div> */}
       
       <Job jobs={jobs} setJobs = {setJobs}/>
   

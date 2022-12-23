@@ -4,3 +4,22 @@
     align-items: center;
     margin-top: calc(2vw + 2rem);
   }
+
+  .logout {
+    width: 120px;
+    height: 40px;
+    
+    // padding: 0;
+     margin: 20px 0px 0px 0px;
+    
+    font-family: 'Lato', sans-serif;
+    font-size: 0.875em;
+    color: #b3aca7;
+    
+    outline:none;
+    cursor: pointer;
+    
+    border: solid 1px #b3aca7;
+    // border-top: none;
+  }
+  

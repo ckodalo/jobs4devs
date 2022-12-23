@@ -135,7 +135,7 @@ console.log(filteredUserJobs)
   ))}
   
     {/* <div className="header-container"> */}
-    <button className="submit" onClick={handleLogOut}>logout</button>
+    <button className="logout" onClick={handleLogOut}>logout</button>
     {/* </div>  */}
 </div>
 

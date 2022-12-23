@@ -74,7 +74,7 @@ console.log(filteredUserJobs)
     // e.stopPropagation()
      console.log(targetJob)
     //e.preventDefault();
-    fetch(`https://obscure-springs-19515.herokuapp.com/jobs/${targetJob.id}`, {
+    fetch(`http://127.0.0.1:3000/jobs/${targetJob.id}`, {
         method: "DELETE",
      })
      //.then(res => res.json())
@@ -82,12 +82,19 @@ console.log(filteredUserJobs)
     // .then 
    }
 
+   //LOGOUT FUNCTIONALITY
+   function handleLogOut () {
+    fetch(`http://127.0.0.1:3000/logout`, {
+      method: "DELETE",
+   })
+   //.then(res => res.json())
+ }
+   
+
   return (
     <div>
-    {/* <div className="header-container">
-      <Header />
-    </div> */}
-    <div>
+  
+    {/* <div> */}
     
       <form id="form">
         <input type="text" name="title" placeholder="job-title" onBlur={handleChange} />
@@ -96,7 +103,7 @@ console.log(filteredUserJobs)
         <input type="text" name="stack" placeholder="skills" onBlur={handleChange} />
         {/* <input type="integer" name="UserID" onBlur={handleChange}/> */}
          <button type="submit" className="submit" onClick={handlePostJob}>
-          Add a Job
+          Post
         </button>
       </form>
 
@@ -104,7 +111,7 @@ console.log(filteredUserJobs)
  <User userData={userData}/> 
 </div>    */}
 
-    </div>
+    {/* </div> */}
 
     <div className="jobs">
   {filteredUserJobs.map((job) => (
@@ -127,12 +134,16 @@ console.log(filteredUserJobs)
     </div>
   ))}
   
+    {/* <div className="header-container"> */}
+    <button className="submit" onClick={handleLogOut}>logout</button>
+    {/* </div>  */}
 </div>
 
    
 
 
-    <div className="footer"></div>
+    <div className="footer"> ikokk</div>
+   
   </div>
 
        

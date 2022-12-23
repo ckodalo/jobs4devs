@@ -41,6 +41,8 @@ function NavBar({user}) {
           >
             Submit Job
         </NavLink> 
+
+
       :
       <NavLink
       to="/Login"

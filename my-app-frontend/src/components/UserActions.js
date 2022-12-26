@@ -5,7 +5,7 @@ import Header from './Header'
 import NavBar from './NavBar'
 
 
-function UserActions({user}) {
+function UserActions({user, setUser}) {
 
   // const [user_id, setUser_Id] = useState(null)
   const [userJobs, setUserJobs] = useState([])
@@ -84,9 +84,14 @@ console.log(filteredUserJobs)
 
    //LOGOUT FUNCTIONALITY
    function handleLogOut () {
-    fetch(`http://127.0.0.1:3000/logout`, {
+    fetch("http://127.0.0.1:3000/logout", {
       method: "DELETE",
    })
+  //  .then((r) => {
+  //   if (r.ok) {
+  //     setUser(null);
+  //   }
+  // });
    //.then(res => res.json())
  }
    

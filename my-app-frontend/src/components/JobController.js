@@ -13,7 +13,7 @@ function JobController({user}) {
 
   useEffect(() => {
     
-    fetch('https://obscure-springs-19515.herokuapp.com/jobs')
+    fetch('/jobs')
     .then(response => response.json())
     .then(data => setJobs(data)) 
     }, []) 

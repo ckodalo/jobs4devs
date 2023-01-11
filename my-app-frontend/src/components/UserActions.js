@@ -13,7 +13,7 @@ function UserActions({user, setUser}) {
   //fetch job(s) with a particular user id
    useEffect(() => {
     
-     fetch("http://127.0.0.1:3000/jobs")
+     fetch("/jobs")
    
        .then(response => response.json())
        .then(data => setUserJobs(data))
@@ -49,7 +49,7 @@ console.log(filteredUserJobs)
   function handlePostJob(e) {
     e.preventDefault();
 //   userData.id === user_id ?  
-    fetch("https://obscure-springs-19515.herokuapp.com/jobs", {
+    fetch("/jobs", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -74,7 +74,7 @@ console.log(filteredUserJobs)
     // e.stopPropagation()
      console.log(targetJob)
     //e.preventDefault();
-    fetch(`http://127.0.0.1:3000/jobs/${targetJob.id}`, {
+    fetch(`/jobs/${targetJob.id}`, {
         method: "DELETE",
      })
      //.then(res => res.json())
@@ -84,7 +84,7 @@ console.log(filteredUserJobs)
 
    //LOGOUT FUNCTIONALITY
    function handleLogOut () {
-    fetch("http://127.0.0.1:3000/logout", {
+    fetch("/logout", {
       method: "DELETE",
    })
   //  .then((r) => {

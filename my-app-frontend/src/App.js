@@ -39,7 +39,7 @@ function App() {
       
       {/* ) : (  */}
       <Routes> 
-        <Route path="/Login" element = {<Login user={user} setUser={setUser}/>}>   
+        <Route path="/Submit" element = {<Login user={user} setUser={setUser}/>}>   
         </Route>
       </Routes>
       {/* )} */}

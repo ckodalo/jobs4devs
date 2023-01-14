@@ -45,7 +45,7 @@ function NavBar({user}) {
 
       :
       <NavLink
-      to="/Login"
+      to="/Submit"
 
       exact
       style={linkStyles}

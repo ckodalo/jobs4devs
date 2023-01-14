@@ -12,14 +12,19 @@ import NavBar from './NavBar'
 function Login({user, setUser}) {
   const [name, setName] = useState("");
   const [password, setPassword] = useState("")
-  // const [passwordConfirmation, setPasswordConfirmation] = useState("");
+  
   const [formData, setFormData] = useState([])
   const navigate =useNavigate()
   // const [loggedUser, setLoggedUser] = useState(null) 
+
+
+// const [newUser, setNewUser] = useState("")
+// const [newUserPassword, setNewUserPassword] = useState("")
+const [passwordConfirmation, setPasswordConfirmation] = useState("");
  
   function handleSubmit(e) {
     e.preventDefault();
-    fetch("/login", {
+    fetch("/submit", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -38,28 +43,28 @@ function Login({user, setUser}) {
     
   }
 
-  function handleNewUserName(e) {
+//   function handleNewUserName(e) {
 
-    setFormData({
-  ...formData,
-    [e.target.name]: e.target.value,
-    })
- console.log(formData)
-   }
+// //     setFormData({
+// //   ...formData,
+// //     [e.target.name]: e.target.value,
+// //     })
+// //  console.log(formData)
+//    }
 
 
   function handlePostNewUser(e) {
     e.preventDefault();
-    fetch("/signup", {
+    fetch("/submit/new", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        formData
-        // name,
-        // password,
-        // password_confirmation: passwordConfirmation,
+         //formData
+         name,
+         password,
+         passwordConfirmation
       }),
     })
       .then((r) => r.json())
@@ -73,7 +78,7 @@ function Login({user, setUser}) {
       <div className="header">
           <NavBar />
         </div>
-    <h3>Enter Your Name to Post a Job</h3>
+    <h3>You need to Log in</h3>
     <form onSubmit={handleSubmit}>
       <input
         type="text"
@@ -90,9 +95,9 @@ function Login({user, setUser}) {
     <h3>or Sign Up</h3>
 
 <form id="form">
-  <input type="text" name="name" placeholder="enter your name" onBlur={handleNewUserName} />
-  <input type="password" name="password" placeholder="enter your pass" onBlur={handleNewUserName} />
-  <input type="password" name="password" placeholder="confirm your pass" onBlur={handleNewUserName} />
+  <input type="text" name="name" placeholder="enter your name" onBlur={(e) => setName(e.target.value)} />
+  <input type="password" name="password" placeholder="enter your pass" onBlur={(e) => setPassword(e.target.value)} />
+  <input type="password" name="password" placeholder="confirm your pass" onBlur={(e) => setPasswordConfirmation(e.target.value)} />
   <button type="submit" className="submit" onClick={handlePostNewUser}>Add Your Name
         </button>
                 </form>

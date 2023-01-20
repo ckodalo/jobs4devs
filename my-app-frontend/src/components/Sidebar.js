@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 
+import SearchTool from './SearchTool';
+
 function Sidebar() {
   const [isOpen, setIsOpen] = useState(false);
 
@@ -9,6 +11,7 @@ function Sidebar() {
 
   return (
     <div className="sidebar">
+      <SearchTool/>
       <button className="sidebar-toggle" onClick={handleToggle}>
         {isOpen ? 'Close' : 'Open'} Sidebar
       </button>

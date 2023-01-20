@@ -6,6 +6,7 @@ import JobController from "./components/JobController";
 import NavBar from "./components/NavBar";
 import Login from "./components/Login";
 import UserActions from "./components/UserActions";
+import Sidebar from "./components/Sidebar";
 
 function App() {
   const [user, setUser] = useState(null)
@@ -25,6 +26,9 @@ function App() {
     <main>
       <div className="header-container">
        <NavBar  user={user} setUser={setUser} />  
+       </div>
+       <div>
+        <Sidebar/>
        </div>
       <Routes>
         <Route path="/" element = {<JobController user={user}/>}> 

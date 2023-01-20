@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 //import Header from "./Header";
 //import Search from "./Search";
 import NavBar from "./NavBar";
-
+import SearchTool from "./SearchTool";
 
 function JobController({user}) {
   const [jobs, setJobs] = useState([]);
@@ -41,13 +41,10 @@ function JobController({user}) {
   return (
     <div id ="body">
 
-      
-      {/* <Job jobs={jobs} setJobs = {setJobs}/> */}
-
-   
-    {/* <div className="header-container">
-        <Header/>
-      </div> */}
+    <div>
+      <SearchTool/>
+    </div>
+    
     <div>
       {jobs.map((job) => (
         <div key={job.id} className={"job-container"}>

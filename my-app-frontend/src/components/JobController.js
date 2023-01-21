@@ -5,6 +5,7 @@ import { useState, useEffect } from "react";
 //import Search from "./Search";
 import NavBar from "./NavBar";
 import SearchTool from "./SearchTool";
+import PostEditor from "./PostEditor";
 
 function JobController({user}) {
   const [jobs, setJobs] = useState([]);
@@ -42,7 +43,7 @@ function JobController({user}) {
     <div id ="body">
 
     <div>
-      <SearchTool/>
+      <PostEditor/>
     </div>
     
     <div>

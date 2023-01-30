@@ -23,21 +23,21 @@ function NavBar({user}) {
         
         to="/"
         exact
-        style={linkStyles}
+        // style={linkStyles}
       
 
       >
   
         Home
         
-      </NavLink> |
+      </NavLink> 
   
         {user ?    
          <NavLink
           to="/UserActions"
     
           exact
-          style={linkStyles}
+          // style={linkStyles}
           >
             Submit Job
         </NavLink> 
@@ -48,7 +48,7 @@ function NavBar({user}) {
       to="/Submit"
 
       exact
-      style={linkStyles}
+      // style={linkStyles}
       >
         Submit
     </NavLink>

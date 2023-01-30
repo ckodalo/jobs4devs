@@ -75,11 +75,11 @@ const [passwordConfirmation, setPasswordConfirmation] = useState("");
 
   return (
     <div>
-      <div className="header">
+      {/* <div className="header">
           <NavBar />
-        </div>
+        </div> */}
     <h3>You need to Log in</h3>
-    <form onSubmit={handleSubmit}>
+    <form className='login-form' onSubmit={handleSubmit}>
       <input
         type="text"
         value={name}
@@ -94,11 +94,11 @@ const [passwordConfirmation, setPasswordConfirmation] = useState("");
     </form>
     <h3>or Sign Up</h3>
 
-<form id="form">
+<form className='login-form' >
   <input type="text" name="name" placeholder="enter your name" onBlur={(e) => setName(e.target.value)} />
   <input type="password" name="password" placeholder="enter your pass" onBlur={(e) => setPassword(e.target.value)} />
   <input type="password" name="password" placeholder="confirm your pass" onBlur={(e) => setPasswordConfirmation(e.target.value)} />
-  <button type="submit" className="submit" onClick={handlePostNewUser}>Add Your Name
+  <button type="submit" onClick={handlePostNewUser}>Add Your Name
         </button>
                 </form>
     {/* <form onSubmit={handlePostNewUser}>

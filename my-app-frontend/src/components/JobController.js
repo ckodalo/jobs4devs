@@ -68,9 +68,9 @@ function JobController({user}) {
       ))}
       
     </div>
-    <div className="footer">
+    {/* <div className="footer">
       <p>ikoKazi 2022</p>
-    </div>
+    </div> */}
     </div>
   
     

@@ -7,6 +7,7 @@ import NavBar from "./components/NavBar";
 import Login from "./components/Login";
 import UserActions from "./components/UserActions";
 import Sidebar from "./components/Sidebar";
+import Footer from "./components/Footer";
 
 function App() {
   const [user, setUser] = useState(null)
@@ -24,12 +25,15 @@ function App() {
   return (
     <>
     <main>
-      <div className="header-container">
+      <div className="navbar">
        <NavBar  user={user} setUser={setUser} />  
        </div>
-       <div>
+        <div>
         <Sidebar/>
-       </div>
+       </div> 
+
+      
+
       <Routes>
         <Route path="/" element = {<JobController user={user}/>}> 
         </Route>
@@ -47,8 +51,10 @@ function App() {
         </Route>
       </Routes>
       {/* )} */}
-      
+
+     
     </main>
+    <Footer />
     </>
   )
 }

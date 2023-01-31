@@ -78,26 +78,30 @@ const [passwordConfirmation, setPasswordConfirmation] = useState("");
       {/* <div className="header">
           <NavBar />
         </div> */}
-    <h3>You need to Log in</h3>
+   
     <form className='login-form' onSubmit={handleSubmit}>
+    <h3>You need to Log in</h3>
       <input
         type="text"
+        placeholder="enter your name"
         value={name}
         onChange={(e) => setName(e.target.value)}
       />
       <input 
         type="password"
+        placeholder="enter your password"
         value={password}
         onChange={(e) => setPassword(e.target.value)}
       />
       <button type="submit">Login</button>
     </form>
-    <h3>or Sign Up</h3>
+   
 
 <form className='login-form' >
+<h3>Or Sign Up</h3>
   <input type="text" name="name" placeholder="enter your name" onBlur={(e) => setName(e.target.value)} />
-  <input type="password" name="password" placeholder="enter your pass" onBlur={(e) => setPassword(e.target.value)} />
-  <input type="password" name="password" placeholder="confirm your pass" onBlur={(e) => setPasswordConfirmation(e.target.value)} />
+  <input type="password" name="password" placeholder="enter your password" onBlur={(e) => setPassword(e.target.value)} />
+  <input type="password" name="password" placeholder="confirm your password" onBlur={(e) => setPasswordConfirmation(e.target.value)} />
   <button type="submit" onClick={handlePostNewUser}>Add Your Name
         </button>
                 </form>

@@ -42,32 +42,35 @@ function JobController({user}) {
   return (
     <div id ="body">
 
-    <div>
-      <PostEditor/>
-    </div>
     
     <div>
+    
+    <SearchTool />
+    
+      {/* <div className="card-container"> */}
       {jobs.map((job) => (
-        <div key={job.id} className={"job-container"}>
+        <div key={job.id} className={"card"}>
            {/* <hr className={"line"}/> */}
-          <div className="part1">
-          <div className = "position">
-            <a href = {job.location}>{job.title}</a></div>
           <div>
-           <span className="details" >{job.stack}</span>
-          </div>
+          <div className = "job-title">
+            <a href = {job.location}>{job.title}</a></div>
+          {/* <div>
+           <span className="skills" >{job.stack}</span>
+          </div> */}
         </div>
         
-        <div className="part2">
-          <div className="details">
+        <div>
+          <div className="recruiter">
         <span>{job.recruiter}</span>
         </div>
         </div>
         </div>
        
       ))}
-      
-    </div>
+      </div>
+
+{/*       
+    </div> */}
     {/* <div className="footer">
       <p>ikoKazi 2022</p>
     </div> */}

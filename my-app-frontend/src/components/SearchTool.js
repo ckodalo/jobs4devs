@@ -30,8 +30,8 @@ function SearchTool() {
 
   return (
     <form onSubmit={handleSubmit}>
-      <input type="text" value={searchTerm} onChange={handleSearch} />
-      <button type="submit">Search</button>
+      <input type="text" id= 'search-bar' value={searchTerm} onChange={handleSearch} />
+      <button type="submit" id='search-button'>Search</button>
       <ul>
         {searchResults.map((result, index) => (
           <li key={index}>{result}</li>

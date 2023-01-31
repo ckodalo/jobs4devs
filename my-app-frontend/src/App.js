@@ -28,9 +28,9 @@ function App() {
       <div className="navbar">
        <NavBar  user={user} setUser={setUser} />  
        </div>
-        <div>
+        {/* <div>
         <Sidebar/>
-       </div> 
+       </div>  */}
 
       
 

@@ -14,7 +14,7 @@ function PostEditor() {
   }
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form className='post-editor' onSubmit={handleSubmit}>
       <textarea className='textarea' value={postContent} onChange={handleChange} />
       <button type="submit">Post</button>
     </form>

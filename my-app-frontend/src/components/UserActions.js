@@ -4,9 +4,30 @@ import { useEffect, useState } from 'react'
 import Header from './Header'
 import NavBar from './NavBar'
 import PostEditor from "./PostEditor";
+import Modal from './Modal';
 
 
 function UserActions({user, setUser}) {
+
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const containerStyles = {
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+    height: "100%",
+    marginTop: "10px"
+  };
+  
+  const buttonStyles = {
+    padding: "10px 20px",
+    backgroundColor: "#4CAF50",
+    color: "white",
+    border: "none",
+    borderRadius: "5px",
+    fontSize: "16px",
+    cursor: "pointer"
+  };
 
   // const [user_id, setUser_Id] = useState(null)
   const [userJobs, setUserJobs] = useState([])
@@ -99,21 +120,25 @@ console.log(filteredUserJobs)
 
   return (
     <div>
-  
+      <Modal isModalOpen={isModalOpen}  setIsModalOpen={setIsModalOpen}/>
     {/* <div> */}
 
-      <PostEditor/>
+      {/* <PostEditor/> */}
+      <div style={containerStyles}>
+      <button onClick={() => setIsModalOpen(true)}>New Job</button>
+      {/* <button style={buttonStyles} onClick >Submit Job</button> */}
+    </div>
     
-      <form className='login-form'>
+      {/* <form className='login-form'>
         <input type="text" name="title" placeholder="job-title" onBlur={handleChange} />
         <input type="text" name="recruiter" placeholder="recruitername" onBlur={handleChange} />
         <input type="text" name="location" placeholder="enter url" onBlur={handleChange} />
         <input type="text" name="stack" placeholder="skills" onBlur={handleChange} />
         {/* <input type="integer" name="UserID" onBlur={handleChange}/> */}
-         <button type="submit"  onClick={handlePostJob}>
+         {/* <button type="submit"  onClick={handlePostJob}>
           Post
         </button>
-      </form>
+      </form> */}
 
       {/* <div>
  <User userData={userData}/> 

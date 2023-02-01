@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
+import { NavLink } from 'react-router-dom';
 
 import SearchTool from './SearchTool';
+import NavBar from './NavBar';
 
-function Sidebar() {
+function Sidebar({user}) {
   const [isOpen, setIsOpen] = useState(false);
 
   const handleToggle = () => {
@@ -11,17 +13,42 @@ function Sidebar() {
 
   return (
     <div className="sidebar">
-      <SearchTool/>
-      <button className="sidebar-toggle" onClick={handleToggle}>
-        {isOpen ? 'Close' : 'Open'} Sidebar
-      </button>
-      {isOpen && (
-        <nav className="sidebar-nav">
-          <a href="#">Home</a>
-          <a href="#">About</a>
-          <a href="#">Contact</a>
-        </nav>
-      )}
+       <div className='navbar'>
+      <NavLink
+        
+        to="/"
+        exact
+        // style={linkStyles}
+      
+
+      >
+  
+        Home
+        
+      </NavLink> 
+  
+        {user ?    
+         <NavLink
+          to="/UserActions"
+    
+          exact
+          // style={linkStyles}
+          >
+            Submit Job
+        </NavLink> 
+
+
+      :
+      <NavLink
+      to="/Submit"
+
+      exact
+      // style={linkStyles}
+      >
+        Submit
+    </NavLink>
+      }
+    </div>
     </div>
   );
 }

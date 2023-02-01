@@ -6,11 +6,11 @@ const Footer = () => (
     justifyContent: "center",
     alignItems: "center",
     height: "60px",
-    backgroundColor: "#333",
+    backgroundColor: "lightgreen",
     color: "#fff",
     fontSize: "14px",
   }}>
-    Footer
+    LightDuty(LD)
   </footer>
 );
 

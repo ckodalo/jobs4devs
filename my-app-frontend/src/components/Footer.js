@@ -6,7 +6,7 @@ const Footer = () => (
     justifyContent: "center",
     alignItems: "center",
     height: "60px",
-    backgroundColor: "lightgreen",
+    backgroundColor: "black",
     color: "#fff",
     fontSize: "14px",
   }}>

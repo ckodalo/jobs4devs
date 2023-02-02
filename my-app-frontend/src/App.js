@@ -26,10 +26,10 @@ function App() {
     <>
     <main>
       <div className="navbar">
-       {/* <NavBar  user={user} setUser={setUser} />   */}
+        <NavBar  user={user} setUser={setUser} />
        </div>
     
-        <Sidebar user={user} setUser={setUser}/>
+        {/* <Sidebar user={user} setUser={setUser}/> */}
        
 
       

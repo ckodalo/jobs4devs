@@ -1,5 +1,8 @@
 {
   "devDependencies": {
     "node-sass": "^8.0.0"
+  },
+  "dependencies": {
+    "emoji-mart": "^5.5.2"
   }
 }

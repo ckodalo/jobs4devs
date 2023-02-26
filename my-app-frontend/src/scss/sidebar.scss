@@ -40,36 +40,36 @@
 }
 
 /* Input field for the search term */
-.sidebar input[type="text"] {
-  width: 100%;
-  padding: 12px 20px;
-  margin: 8px 0;
-  box-sizing: border-box;
-  border: 2px solid #ccc;
-  border-radius: 4px;
-}
+// .sidebar input[type="text"] {
+//   width: 100%;
+//   padding: 12px 20px;
+//   margin: 8px 0;
+//   box-sizing: border-box;
+//   border: 2px solid #ccc;
+//   border-radius: 4px;
+// }
 
-/* Search button */
-.sidebar button[type="submit"] {
-  width: 100%;
-  background-color: green;
-  color: white;
-  padding: 14px 20px;
-  margin: 8px 0;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-}
+// /* Search button */
+// .sidebar button[type="submit"] {
+//   width: 100%;
+//   background-color: green;
+//   color: white;
+//   padding: 14px 20px;
+//   margin: 8px 0;
+//   border: none;
+//   border-radius: 4px;
+//   cursor: pointer;
+// }
 
-/* Results container */
-.sidebar .results {
-  list-style-type: none;
-  padding: 0;
-  margin: 0;
-}
+// /* Results container */
+// .sidebar .results {
+//   list-style-type: none;
+//   padding: 0;
+//   margin: 0;
+// }
 
-/* Each result item */
-.sidebar .results li {
-  padding: 12px;
-  border-bottom: 1px solid #ccc;
-}
+// /* Each result item */
+// .sidebar .results li {
+//   padding: 12px;
+//   border-bottom: 1px solid #ccc;
+// }

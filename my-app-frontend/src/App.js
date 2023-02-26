@@ -8,6 +8,7 @@ import Login from "./components/Login";
 import UserActions from "./components/UserActions";
 import Sidebar from "./components/Sidebar";
 import Footer from "./components/Footer";
+import SearchTool from "./components/SearchTool";
 
 function App() {
   const [user, setUser] = useState(null)
@@ -27,7 +28,10 @@ function App() {
     <main>
       <div className="navbar">
         <NavBar  user={user} setUser={setUser} />
+     
        </div>
+{/* 
+        <SearchTool />  */}
     
         {/* <Sidebar user={user} setUser={setUser}/> */}
        

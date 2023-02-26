@@ -9,6 +9,7 @@ const Footer = () => (
     backgroundColor: "black",
     color: "#fff",
     fontSize: "14px",
+    marginTop: "100%"
   }}>
     LightDuty(LD)
   </footer>

@@ -1,16 +1,3 @@
-// import React from "react";
-
-// const Search = ({ setSearchKeyword }) => {
-//   return (
-//     <div className="header-container">
-//       <ul>
-//         <input type="text" onChange={(e) => setSearchKeyword(e.target.value)} />
-//       </ul>
-//     </div>
-//   );
-// };
-
-// export default Search;
 
 
 import React, { useState } from 'react';
@@ -29,7 +16,7 @@ function SearchTool() {
   }
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form  onSubmit={handleSubmit}>
       <input type="text" id= 'search-bar' value={searchTerm} onChange={handleSearch} />
       <button type="submit" id='search-button'>Search</button>
       <ul>

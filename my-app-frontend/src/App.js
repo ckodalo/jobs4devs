@@ -12,6 +12,9 @@ import SearchTool from "./components/SearchTool";
 
 function App() {
   const [user, setUser] = useState(null)
+
+  const [errorMessage, setErrorMessage] = useState("")
+
   console.log(user)
 
 
@@ -39,19 +42,19 @@ function App() {
       
 
       <Routes>
-        <Route path="/" element = {<JobController user={user}/>}> 
+        <Route path="/" element = {<JobController errorMessage={errorMessage} setErrorMessage={setErrorMessage} user={user}/>}> 
         </Route>
     </Routes> 
       
        {/* {user ? ( */}
        <Routes>
-        <Route path="/UserActions" element = {<UserActions user={user}  setUser={setUser}/>}>
+        <Route path="/UserActions" element = {<UserActions errorMessage={errorMessage} setErrorMessage={setErrorMessage}  user={user}  setUser={setUser}/>}>
         </Route>
         </Routes>
       
       {/* ) : (  */}
       <Routes> 
-        <Route path="/Submit" element = {<Login user={user} setUser={setUser}/>}>   
+        <Route path="/Submit" element = {<Login errorMessage={errorMessage} setErrorMessage={setErrorMessage}  user={user} setUser={setUser}/>}>   
         </Route>
       </Routes>
       {/* )} */}

@@ -36,3 +36,15 @@
     background-color: #3e8e41;
   }
   
+  .error-message {
+    border: 2px solid #ff6347;
+    background-color: #ffe4e1;
+    color: #ff6347;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    text-transform: uppercase;
+  }

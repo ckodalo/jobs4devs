@@ -43,7 +43,7 @@ function JobController({user}) {
     borderLeft: '1px solid rgba(229, 229, 229, 0.5)',
     borderRight: '1px solid rgba(229, 229, 229, 0.5)',
     borderBottom: '1px solid rgba(229, 229, 229, 0.5)',
-    backgroundColor: '#3C3C3C',
+    backgroundColor: '#3',
     color: '#FFFFFF',
   };
   

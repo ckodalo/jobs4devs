@@ -10,7 +10,7 @@ import Card from './Card';
 import { useNavigate } from "react-router-dom";
 
 
-function UserActions({user, setUser}) {
+function UserActions({user, setUser, errorMessage, setErrorMessage}) {
 
   const navigate = useNavigate();
   
@@ -38,8 +38,10 @@ function UserActions({user, setUser}) {
        .then(response => response.json())
        .then(data => setUserJobs(data))
    }, [])
+
+   console.log(userJobs)
 //filter jobs by id 
-const filteredUserJobs = userJobs.filter(job => job.user_id == user.id)
+const filteredUserJobs = userJobs.filter(job => job.user_id === user.id)
 
 
   
@@ -125,7 +127,7 @@ const [formData, setFormData] = useState([]);
 
   return (
     <div>
-         <AddJobModal user = {user} showModal={showModal} setShowModal={setShowModal} />
+         <AddJobModal errorMessage={errorMessage} setErrorMessage={setErrorMessage} user = {user} showModal={showModal} setShowModal={setShowModal} />
   
       {/* <Modal isModalOpen={isModalOpen}  setIsModalOpen={setIsModalOpen}/> */}
     {/* <div> *
@@ -153,18 +155,6 @@ const [formData, setFormData] = useState([]);
       <div style={headerCell}>Description</div>
     </div>
    {specialLister}
-
-   <form className='posting-form'>
-        <input type="text" name="title" placeholder="job-title"
-         />
-        <input type="text" name="recruiter" placeholder="recruitername" onBlur={handleChange} />
-        <input type="text" name="location" placeholder="enter url" onBlur={handleChange} />
-        <input type="text" name="stack" placeholder="skills" onBlur={handleChange} />
-         {/* <input type="integer" name="UserID" onBlur={handleChange}/>  */}
-          <button type="submit"  onClick={handlePostJob}>
-          Submit
-        </button>
-      </form> 
   
       <div class="controls-container">
 
@@ -238,34 +228,3 @@ const headerCell = {
   color: '#FFFFFF',
 };
 
-
-
-// const headerContainer = {
-//   display: "flex",
-//   backgroundColor: "#7DCE82",
-//    padding: "10px 0",
-//   fontSize: "14px"
-// };
-
-
-//  const cardContainer = {
-//    border: "1px solid gray",
-//     borderRadius: "5px",
-//     padding: "10px",
-//    fontSize: "14px",
-//    width: "400px",
-//    margin: "0px",
-//    fontFamily: "Spartan, sans-serif"
-
-
-//  };
-
-  
-// const headerCell = {
-//   width: "35%",
-//   // padding: "10px",
-//   fontWeight: "bold",
-//   textAlign: "left",
-//   fontSize: "14px"
-//   // borderRight: "1px solid gray"
-// };

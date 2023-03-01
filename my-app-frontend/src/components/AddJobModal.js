@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
-function AddJobModal({showModal, setShowModal, user}) {
+function AddJobModal({showModal, setShowModal, user, errorMessage, setErrorMessage}) {
   // [showModal, setShowModal] = useState(false);
 
   // const handleOpenModal = () => setShowModal(true);
@@ -33,19 +33,43 @@ function AddJobModal({showModal, setShowModal, user}) {
       },
       body: JSON.stringify(formData),
     })
-      .then(res => res.json())
-      .then(data => setUserJobs({
-        ...userJobs,
-        data
-      })
-      )
-      .then( navigate("/UserActions"))
+      .then(res => { 
+        if (res.ok) { 
+        res.json().then((data) => setUserJobs({...userJobs, data}))
+    }
+    else {
+        // Handle error response
+        res.json().then((data) => {
+          setErrorMessage(data.errors)
+          setTimeout(() => {
+            setErrorMessage(null);
+          }, 5000);
+        })
+    }
+  }
+    )
+     .then(setShowModal(false))
+     .then( navigate("/UserActions"))
+     .catch(error => {
+      console.error(error);
+      setErrorMessage('An error occurred. Please try again.')
+      setTimeout(() => {
+        setErrorMessage(null);
+      }, 5000);
+      
+    });
 
   };
 
   return (
     <>
     
+{errorMessage && (
+        <div className="error-message">
+          <p>{errorMessage}</p>
+        </div>
+      )}
+   
 
       {/* The modal */}
       {showModal && (

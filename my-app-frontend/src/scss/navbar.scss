@@ -1,18 +1,36 @@
 .navbar {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    text-align: right;
-    height: 60px;
-    padding: 0 20px;
-    background-color: green;
-  }
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: right;
+  height: 60px;
+  padding: 0 20px;
+  background-color: var(--primary-color);
+}
+
+.navbar a {
+  color: #fff;
+  text-decoration: none;
+  margin-right: 20px;
+}
+
+
+
+// .navbar {
+//     display: flex;
+//     flex-direction: column;
+//     justify-content: center;
+//     text-align: right;
+//     height: 60px;
+//     padding: 0 20px;
+//     background-color: green;
+//   }
   
-  .navbar a {
-    color: #fff;
-    text-decoration: none;
-    margin-right: 20px;
-  }
+//   .navbar a {
+//     color: #fff;
+//     text-decoration: none;
+//     margin-right: 20px;
+//   }
 
 
   // display: flex;

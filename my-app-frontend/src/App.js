@@ -1,7 +1,5 @@
-
-import React, {useState, useEffect} from "react";
+import React, { useState, useEffect } from "react";
 import { Routes, Route } from "react-router-dom";
-// import { Switch, Route } from "react-router-dom";
 import JobController from "./components/JobController";
 import NavBar from "./components/NavBar";
 import Login from "./components/Login";
@@ -11,59 +9,51 @@ import Footer from "./components/Footer";
 import SearchTool from "./components/SearchTool";
 
 function App() {
-  const [user, setUser] = useState(null)
+  const [user, setUser] = useState(null);
 
-  const [errorMessage, setErrorMessage] = useState("")
+  const [errorMessage, setErrorMessage] = useState("");
 
-  console.log(user)
+  console.log(user);
 
+  useEffect(() => {
+    fetch("http://127.0.0.1:3000/me").then((response) => {
+      if (response.ok) {
+        response.json().then((user) => setUser(user));
+      }
+    });
+  }, []);
 
-  
-     useEffect(() => {
-         fetch("http://127.0.0.1:3000/me").then((response) => {
-           if (response.ok) {
-             response.json().then((user) => setUser(user));
-           }
-         });
-       }, []);
   return (
-    <>
-    <main>
-      <div className="navbar">
-        <NavBar  user={user} setUser={setUser} />
-     
-       </div>
-{/* 
-        <SearchTool />  */}
-    
-        {/* <Sidebar user={user} setUser={setUser}/> */}
-       
+    <div className="app-container">
+      <main>
+        <div className="navbar">
+          <NavBar user={user} setUser={setUser} />
+        </div>
 
-      
-
-      <Routes>
-        <Route path="/" element = {<JobController errorMessage={errorMessage} setErrorMessage={setErrorMessage} user={user}/>}> 
-        </Route>
-    </Routes> 
-      
-       {/* {user ? ( */}
-       <Routes>
-        <Route path="/UserActions" element = {<UserActions errorMessage={errorMessage} setErrorMessage={setErrorMessage}  user={user}  setUser={setUser}/>}>
-        </Route>
+        <Routes>
+          <Route
+            path="/"
+            element={<JobController errorMessage={errorMessage} setErrorMessage={setErrorMessage} user={user} />}
+          ></Route>
         </Routes>
-      
-      {/* ) : (  */}
-      <Routes> 
-        <Route path="/Submit" element = {<Login errorMessage={errorMessage} setErrorMessage={setErrorMessage}  user={user} setUser={setUser}/>}>   
-        </Route>
-      </Routes>
-      {/* )} */}
 
-     
-    </main>
-    <Footer />
-    </>
-  )
+        <Routes>
+          <Route
+            path="/UserActions"
+            element={<UserActions errorMessage={errorMessage} setErrorMessage={setErrorMessage} user={user} setUser={setUser} />}
+          ></Route>
+        </Routes>
+
+        <Routes>
+          <Route
+            path="/Submit"
+            element={<Login errorMessage={errorMessage} setErrorMessage={setErrorMessage} user={user} setUser={setUser} />}
+          ></Route>
+        </Routes>
+      </main>
+      <Footer />
+    </div>
+  );
 }
 
-export default App
+export default App;

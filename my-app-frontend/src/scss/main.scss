@@ -1,62 +1,71 @@
-
-
 @import url("https://fonts.googleapis.com/css2?family=Spartan:wght@500;700&display=swap");
 
-//variables
-
+/* Set up root variables */
 :root {
-  font-family: 'Spartan', sans-serif;
-  font-size: 15px;
-  //      background: #e2dedb;
-  //     // color: #b3aca7;
-  //  --primary-color: rgb(91, 164, 164);
-  // // --background-color: hsl(180, 52%, 96%);
-  // --filter-table: hsl(180, 31%, 95%);
-  // --dark-greyish: hsl(180, 8%, 52%);
-  // --very-dark-greyish: hsl(180, 14%, 20%);
-  
+  --primary-color: rgb(91, 164, 164);
+  --background-color: hsl(180, 52%, 96%);
+  --filter-table: hsl(180, 31%, 95%);
+  --dark-greyish: hsl(180, 8%, 52%);
+  --very-dark-greyish: hsl(180, 14%, 20%);
 }
 
+/* Set up default styles for all elements */
 *,
 *::before,
 *::after {
   margin: 0;
   padding: 0;
-  box-sizing: inherit;
-}
-
-html {
-  font-size: 15px;
-  font-weight: 500;
   box-sizing: border-box;
-
-  
 }
 
-#body {
-  font-family: "Spartan", sans-serif;
+/* Set up the base font styles */
+html {
+  font-size: 62.5%; /* set 1rem to be 10px */
+}
+
+body {
+  font-family: 'Spartan', sans-serif;
+  font-size: 1.5rem; /* 15px */
+  font-weight: 500;
   background-color: var(--background-color);
-  //  padding-left: 20px;
-  // padding-right: 20px;
-  width: 50%;
-  
-    margin: 0px auto 0px auto;
 }
 
-@media only screen and (min-width: 300px) and (max-width : 750px) {
-   html {
-     font-size: 0.75rem;
-    // width: 100%;
-   }
+/* Set up the main container for the page */
+.app-container {
+  max-width: 120rem; /* 1200px */
+  margin: 0 auto;
+  padding: 0 2rem;
+  min-height: 20vh;
+}
 
-   #body {
-      width: 90%;
-    //  min-width: 100%;
-     padding: 0;
-      
-     height: inherit !important;
-     
-      -webkit-text-size-adjust: none;
+/* Set up media queries for responsive design */
+@media only screen and (max-width: 75em) { /* 1200px */
+  /* Adjust the font size and width of the container */
+  html {
+    font-size: 56.25%; /* 9px */
+  }
+  .container {
+    max-width: 90%;
+  }
+}
 
-   }
+@media only screen and (max-width: 56.25em) { /* 900px */
+  /* Adjust the font size and width of the container */
+  html {
+    font-size: 50%; /* 8px */
+  }
+  .container {
+    max-width: 95%;
+    padding: 0;
+  }
+}
+
+@media only screen and (max-width: 37.5em) { /* 600px */
+  /* Adjust the font size and width of the container */
+  html {
+    font-size: 43.75%; /* 7px */
+  }
+  .container {
+    max-width: 100%;
+  }
 }

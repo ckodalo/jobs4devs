@@ -7,104 +7,305 @@
 //   --very-dark-greyish: hsl(180, 14%, 20%);
 // }
 
+
+//style 1
+
 /* Card Styling */
-.card-container {
-  background-color: var(--background-color);
-  border-radius: 0;
-  box-shadow: 0 0 1px 1px rgba(0, 0, 0, 0.1);
-  padding: 0;
-  margin-bottom: 4px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  border: 1px solid var(--dark-greyish);
-  height: auto;
-}
+// .card-container {
+//   background-color: var(--background-color);
+//   border-radius: 0;
+//   box-shadow: 0 0 1px 1px rgba(0, 0, 0, 0.1);
+//   padding: 0;
+//   margin-bottom: 4px;
+//   display: flex;
+//   flex-direction: column;
+//   justify-content: space-between;
+//   border: 1px solid var(--dark-greyish);
+//   height: auto;
+// }
 
-.card-row {
-  display: flex;
-  flex-direction: row;
-  background-color: var(--filter-table);
-  padding: 4px 8px;
-  font-size: 12px;
-  font-family: Arial, sans-serif;
-  border-bottom: 1px solid var(--dark-greyish);
-  border-top: 1px solid var(--dark-greyish);
-}
+// .card-row {
+//   display: flex;
+//   flex-direction: row;
+//   background-color: var(--filter-table);
+//   padding: 4px 8px;
+//   font-size: 12px;
+//   font-family: Arial, sans-serif;
+//   border-bottom: 1px solid var(--dark-greyish);
+//   border-top: 1px solid var(--dark-greyish);
+// }
 
-.cell {
-  flex: 1;
-  font-size: 12px;
-  font-weight: normal;
-  color: var(--very-dark-greyish);
-  padding: 8px;
-  border-right: 1px solid var(--dark-greyish);
-  border-bottom: 1px solid var(--dark-greyish);
-}
+// .cell {
+//   flex: 1;
+//   font-size: 12px;
+//   font-weight: normal;
+//   color: var(--very-dark-greyish);
+//   padding: 8px;
+//   border-right: 1px solid var(--dark-greyish);
+//   border-bottom: 1px solid var(--dark-greyish);
+// }
 
-.card-delete-btn {
-  background-color: var(--primary-color);
-  color: #ffffff;
-  font-size: 12px;
-  font-weight: bold;
-  padding: 4px 8px;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  margin: 4px;
-}
+// .card-delete-btn {
+//   background-color: var(--primary-color);
+//   color: #ffffff;
+//   font-size: 12px;
+//   font-weight: bold;
+//   padding: 4px 8px;
+//   border: none;
+//   border-radius: 4px;
+//   cursor: pointer;
+//   margin: 4px;
+// }
 
-.card-delete-btn:hover {
-  background-color: #e53d3d;
-}
+// .card-delete-btn:hover {
+//   background-color: #e53d3d;
+// }
 
-.job-controller-header {
-  margin-left: 0px;
-  display: flex;
-  background-color: #3c3c3c;
-  padding: 10px 0;
-  font-size: 16px;
-  font-family: Arial, sans-serif;
-  border-bottom: 2px solid #e5e5e5;
-  box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.08);
-  color: #fff;
-}
+// .job-controller-header {
+//   margin-left: 0px;
+//   display: flex;
+//   background-color: #3c3c3c;
+//   padding: 10px 0;
+//   font-size: 16px;
+//   font-family: Arial, sans-serif;
+//   border-bottom: 2px solid #e5e5e5;
+//   box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.08);
+//   color: #fff;
+// }
 
-.job-controller-header-cell {
-  width: 35%;
-  padding: 8px;
-  font-weight: bold;
-  text-align: left;
-  font-size: 14px;
-  border: 1px solid rgba(229, 229, 229, 0.5);
-  background-color: #3c3c3c;
-  color: #fff;
-}
+// .job-controller-header-cell {
+//   width: 35%;
+//   padding: 8px;
+//   font-weight: bold;
+//   text-align: left;
+//   font-size: 14px;
+//   border: 1px solid rgba(229, 229, 229, 0.5);
+//   background-color: #3c3c3c;
+//   color: #fff;
+// }
 
-.job-controller-button-container {
-  display: flex;
-  justify-content: center;
-  margin-top: 16px;
-  gap: 8px;
-  align-items: center;
-}
+// .job-controller-button-container {
+//   display: flex;
+//   justify-content: center;
+//   margin-top: 16px;
+//   gap: 8px;
+//   align-items: center;
+// }
 
-.job-controller-button {
-  background-color: #fff;
-  color: #3c3c3c;
-  border: 2px solid #3c3c3c;
-  border-radius: 4px;
-  padding: 8px 16px;
-  font-size: 14px;
-  cursor: pointer;
-  transition: background-color 0.2s;
-  margin-right: 8px;
-}
+// .job-controller-button {
+//   background-color: #fff;
+//   color: #3c3c3c;
+//   border: 2px solid #3c3c3c;
+//   border-radius: 4px;
+//   padding: 8px 16px;
+//   font-size: 14px;
+//   cursor: pointer;
+//   transition: background-color 0.2s;
+//   margin-right: 8px;
+// }
 
-.job-controller-button.active {
-  background-color: #3c3c3c;
-  color: #fff;
-}
+// .job-controller-button.active {
+//   background-color: #3c3c3c;
+//   color: #fff;
+// }
+
+
+//style 2
+
+// .card-container {
+//   background-color: #F7F9FC;
+//   border-radius: 10px;
+//   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+//   padding: 20px;
+//   margin-bottom: 20px;
+//   display: flex;
+//   flex-direction: column;
+//   justify-content: space-between;
+//   border: none;
+// }
+
+// .card-row {
+//   display: flex;
+//   flex-direction: row;
+//   background-color: #F7F9FC;
+//   padding: 4px 8px;
+//   font-size: 14px;
+//   font-family: Arial, sans-serif;
+//   border-bottom: 1px solid #E6E6E6;
+//   border-top: none;
+// }
+
+// .cell {
+//   flex: 1;
+//   font-size: 14px;
+//   font-weight: normal;
+//   color: #444444;
+//   padding: 10px;
+//   border-right: 1px solid #E6E6E6;
+//   border-bottom: none;
+// }
+
+// .card-delete-btn {
+//   background-color: #ED4337;
+//   color: #FFFFFF;
+//   font-size: 14px;
+//   font-weight: bold;
+//   padding: 10px;
+//   border: none;
+//   border-radius: 4px;
+//   cursor: pointer;
+//   margin: 10px 0 0 auto;
+//   width: 80px;
+//   transition: background-color 0.2s;
+// }
+
+// .card-delete-btn:hover {
+//   background-color: #C62828;
+// }
+
+// .job-controller-header {
+//   display: flex;
+//   background-color: #3F51B5;
+//   padding: 20px;
+//   font-size: 18px;
+//   font-family: Arial, sans-serif;
+//   border-bottom: none;
+//   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+//   color: #FFFFFF;
+// }
+
+// .job-controller-header-cell {
+//   width: 35%;
+//   padding: 10px;
+//   font-weight: bold;
+//   text-align: left;
+//   font-size: 16px;
+//   border: none;
+//   background-color: #3F51B5;
+//   color: #FFFFFF;
+// }
+
+// .job-controller-button-container {
+//   display: flex;
+//   justify-content: center;
+//   margin-top: 20px;
+//   gap: 8px;
+//   align-items: center;
+// }
+
+// .job-controller-button {
+//   background-color: #FFFFFF;
+//   color: #3F51B5;
+//   border: 2px solid #3F51B5;
+//   border-radius: 4px;
+//   padding: 10px 20px;
+//   font-size: 16px;
+//   cursor: pointer;
+//   transition: background-color 0.2s;
+// }
+
+// .job-controller-button.active {
+//   background-color: #3F51B5;
+//   color: #FFFFFF;
+// }
+
+//style 3
+
+// .card-container {
+//   background-color: #fff;
+//   border-radius: 4px;
+//   box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+//   padding: 16px;
+//   margin-bottom: 16px;
+//   display: flex;
+//   flex-direction: column;
+//   justify-content: space-between;
+//   border: 1px solid #e5e5e5;
+// }
+
+// .card-row {
+//   display: flex;
+//   flex-direction: row;
+//   background-color: #f5f5f5;
+//   padding: 8px;
+//   font-size: 14px;
+//   font-family: Arial, sans-serif;
+//   border-bottom: 1px solid #e5e5e5;
+//   border-top: 1px solid #e5e5e5;
+// }
+
+// .cell {
+//   flex: 1;
+//   font-size: 14px;
+//   font-weight: normal;
+//   color: #333;
+//   padding: 8px;
+//   border-right: 1px solid #e5e5e5;
+// }
+
+// .card-delete-btn {
+//   background-color: #f44336;
+//   color: #fff;
+//   font-size: 12px;
+//   font-weight: bold;
+//   padding: 8px;
+//   border: none;
+//   border-radius: 4px;
+//   cursor: pointer;
+//   margin-left: auto;
+// }
+
+// .card-delete-btn:hover {
+//   background-color: #d32f2f;
+// }
+
+// .job-controller-header {
+//   margin: 0;
+//   display: flex;
+//   background-color: #333;
+//   padding: 16px;
+//   font-size: 18px;
+//   font-family: Arial, sans-serif;
+//   border-bottom: 2px solid #e5e5e5;
+//   box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.08);
+//   color: #fff;
+// }
+
+// .job-controller-header-cell {
+//   width: 33.33%;
+//   padding: 16px;
+//   font-weight: bold;
+//   text-align: left;
+//   font-size: 16px;
+//   border: none;
+//   background-color: #333;
+//   color: #fff;
+// }
+
+// .job-controller-button-container {
+//   display: flex;
+//   justify-content: flex-end;
+//   margin-top: 16px;
+//   gap: 8px;
+//   align-items: center;
+// }
+
+// .job-controller-button {
+//   background-color: #fff;
+//   color: #333;
+//   border: 2px solid #333;
+//   border-radius: 4px;
+//   padding: 8px 16px;
+//   font-size: 14px;
+//   cursor: pointer;
+//   transition: background-color 0.2s;
+// }
+
+// .job-controller-button.active {
+//   background-color: #333;
+//   color: #fff;
+// }
+
 
 
 // .cardContainer  {
@@ -156,6 +357,294 @@
 //   };
 
 
+//style 4
+
+// .card-container {
+//   background-color: #fff;
+//   border-radius: 6px;
+//   box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.24);
+//   padding: 16px;
+//   margin-bottom: 16px;
+//   height: auto;
+// }
+
+// .card-row {
+//   display: flex;
+//   flex-direction: row;
+//   background-color: #F4F4F4;
+//   padding: 8px;
+//   font-size: 12px;
+//   font-family: Arial, sans-serif;
+//   border-radius: 6px;
+//   border-bottom: none;
+//   border-top: none;
+// }
+
+// .cell {
+//   flex: 1;
+//   font-size: 12px;
+//   font-weight: normal;
+//   color: #333;
+//   padding: 8px;
+//   border-right: 1px solid #ddd;
+//   border-bottom: none;
+// }
+
+// .card-delete-btn {
+//   background-color: #fff;
+//   color: #666;
+//   font-size: 12px;
+//   font-weight: bold;
+//   padding: 8px;
+//   border: 1px solid #ddd;
+//   border-radius: 4px;
+//   cursor: pointer;
+//   margin-left: auto;
+// }
+
+// .card-delete-btn:hover {
+//   background-color: #e53d3d;
+//   color: #fff;
+// }
+
+// .job-controller-header {
+//   margin-left: 0px;
+//   display: flex;
+//   background-color: #fff;
+//   padding: 16px;
+//   font-size: 16px;
+//   font-family: Arial, sans-serif;
+//   border-bottom: 1px solid #ddd;
+//   color: #333;
+// }
+
+// .job-controller-header-cell {
+//   width: 35%;
+//   padding: 8px;
+//   font-weight: bold;
+//   text-align: left;
+//   font-size: 14px;
+//   border: none;
+//   background-color: #fff;
+//   color: #333;
+// }
+
+// .job-controller-button-container {
+//   display: flex;
+//   justify-content: center;
+//   margin-top: 16px;
+//   gap: 8px;
+//   align-items: center;
+// }
+
+// .job-controller-button {
+//   background-color: #fff;
+//   color: #666;
+//   border: 2px solid #ddd;
+//   border-radius: 4px;
+//   padding: 8px 16px;
+//   font-size: 14px;
+//   cursor: pointer;
+//   transition: background-color 0.2s;
+//   margin-right: 8px;
+// }
+
+// .job-controller-button.active {
+//   background-color: #3c3c3c;
+//   color: #fff;
+// }
+
+//style 5
+// .card-container {
+//   background-color: #f5f5f5;
+//   border-radius: 8px;
+//   box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.1);
+//   padding: 16px;
+//   margin-bottom: 16px;
+//   display: flex;
+//   flex-direction: column;
+//   justify-content: space-between;
+//   border: 1px solid #e5e5e5;
+// }
+
+// .card-row {
+//   display: flex;
+//   flex-direction: row;
+//   background-color: #fff;
+//   padding: 16px;
+//   font-size: 14px;
+//   font-family: Arial, sans-serif;
+//   border-bottom: 1px solid #e5e5e5;
+// }
+
+// .cell {
+//   flex: 1;
+//   font-size: 14px;
+//   font-weight: normal;
+//   color: #333;
+//   padding: 8px;
+// }
+
+// .card-delete-btn {
+//   background-color: #f44336;
+//   color: #fff;
+//   font-size: 14px;
+//   font-weight: bold;
+//   padding: 8px 16px;
+//   border: none;
+//   border-radius: 4px;
+//   cursor: pointer;
+//   margin: 4px;
+// }
+
+// .card-delete-btn:hover {
+//   background-color: #e53935;
+// }
+
+// .job-controller-header {
+//   margin-left: 0px;
+//   display: flex;
+//   background-color: #333;
+//   padding: 16px;
+//   font-size: 18px;
+//   font-family: Arial, sans-serif;
+//   border-bottom: 2px solid #e5e5e5;
+//   box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.08);
+//   color: #fff;
+// }
+
+// .job-controller-header-cell {
+//   width: 35%;
+//   padding: 16px;
+//   font-weight: bold;
+//   text-align: left;
+//   font-size: 16px;
+//   border: 1px solid rgba(229, 229, 229, 0.5);
+//   background-color: #333;
+//   color: #fff;
+// }
+
+// .job-controller-button-container {
+//   display: flex;
+//   justify-content: center;
+//   margin-top: 16px;
+//   gap: 8px;
+//   align-items: center;
+// }
+
+// .job-controller-button {
+//   background-color: #fff;
+//   color: #333;
+//   border: 2px solid #333;
+//   border-radius: 4px;
+//   padding: 8px 16px;
+//   font-size: 14px;
+//   cursor: pointer;
+//   transition: background-color 0.2s;
+//   margin-right: 8px;
+// }
+
+// .job-controller-button.active {
+//   background-color: #333;
+//   color: #fff;
+// }
+
+//style 6
+.card-container {
+  background-color: var(--background-color);
+  border-radius: 0;
+  box-shadow: 0 0 1px 1px rgba(0, 0, 0, 0.1);
+  padding: 0;
+  margin-bottom: 4px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border: 1px solid var(--dark-greyish);
+}
+
+.card-row {
+  display: flex;
+  flex-direction: row;
+  background-color: var(--filter-table);
+  padding: 8px 12px;
+  font-size: 14px;
+  font-family: Arial, sans-serif;
+  border-bottom: 1px solid var(--dark-greyish);
+  border-top: 1px solid var(--dark-greyish);
+}
+
+.cell {
+  flex: 1;
+  font-size: 14px;
+  font-weight: normal;
+  color: var(--very-dark-greyish);
+  padding: 8px;
+  border-right: 1px solid var(--dark-greyish);
+}
+
+.card-delete-btn {
+  background-color: var(--primary-color);
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: bold;
+  padding: 8px 12px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin: 4px;
+}
+
+.card-delete-btn:hover {
+  background-color: #e53d3d;
+}
+
+.job-controller-header {
+  margin-left: 0px;
+  display: flex;
+  background-color: #3c3c3c;
+  padding: 12px 16px;
+  font-size: 18px;
+  font-family: Arial, sans-serif;
+  border-bottom: 2px solid #e5e5e5;
+  box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.08);
+  color: #fff;
+}
+
+.job-controller-header-cell {
+  width: 35%;
+  padding: 12px 16px;
+  font-weight: bold;
+  text-align: left;
+  font-size: 16px;
+  border: 1px solid rgba(229, 229, 229, 0.5);
+  background-color: #3c3c3c;
+  color: #fff;
+}
+
+.job-controller-button-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 16px;
+  gap: 16px;
+  align-items: center;
+}
+
+.job-controller-button {
+  background-color: #fff;
+  color: #3c3c3c;
+  border: 2px solid #3c3c3c;
+  border-radius: 4px;
+  padding: 12px 24px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  margin-right: 16px;
+}
+
+.job-controller-button.active {
+  background-color: #3c3c3c;
+  color: #fff;
+}
 
 
 

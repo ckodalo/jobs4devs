@@ -1,25 +1,25 @@
-import React from 'react'
-import {useState, useEffect} from 'react'
-import Login from './Login'
+// import React from 'react'
+// import {useState, useEffect} from 'react'
+// import Login from './Login'
 
-function Users() {
+// function Users() {
 
-const [users, setUsers] = useState([])
+// const [users, setUsers] = useState([])
 
-    useEffect (() => {
-        fetch("https://obscure-springs-19515.herokuapp.com/users")
-         .then(res => res.json())
-         .then(data => setUsers(data))
-    }, [])
+//     useEffect (() => {
+//         fetch("https://obscure-springs-19515.herokuapp.com/users")
+//          .then(res => res.json())
+//          .then(data => setUsers(data))
+//     }, [])
 
-  return (
+//   return (
 
 
 
-    <div>
-        <Login users = {users}/>
-    </div>
-  )
-}
+//     <div>
+//         <Login users = {users}/>
+//     </div>
+//   )
+// }
 
-export default Users
+// export default Users

@@ -24,8 +24,8 @@ function App() {
   }, []);
 
   return (
-    <div className="app-container">
-      <main>
+    <div >
+      <main className="app-container">
         <div className="navbar">
           <NavBar user={user} setUser={setUser} />
         </div>
@@ -51,8 +51,9 @@ function App() {
           ></Route>
         </Routes>
       </main>
-      <Footer />
+      <Footer/>
     </div>
+    
   );
 }
 

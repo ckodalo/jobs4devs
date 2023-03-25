@@ -1,22 +1,77 @@
 import React from "react";
 
-const Card = ({ job, showDelete, handleDelete }) => (
-  <div className="card-container">
-    <div className="card-row">
-      <div className="cell">{job.title}</div>
-      <div className="cell">{job.recruiter}</div>
-      <div className="cell">{job.details}</div>
-      <div className="cell">{job.deadline}</div>
+// const Card = ({ job, showDelete, handleDelete }) => (
+//   <a href={job.applicationUrl} className="card-link">
+//   <div className="card-container" >
+//     <div className="card-row">
+//       <div className="cell">{job.title}</div>
+//       <div className="cell">{job.recruiter}</div>
+//       <div className="cell">{job.details}</div>
+//       <div className="cell">{job.deadline}</div>
+//     </div>
+//     {showDelete && (
+//       <button className="card-delete-btn" onClick={() => handleDelete(job)}>
+//         DEL
+//       </button>
+//     )}
+//   </div>
+//   </a>
+// );
+
+// export default Card;
+
+
+
+// const Card = ({ job }) => (
+//   <div className="card">
+//     <div className="card-header">
+//       <h3 className="card-title">{job.title}</h3>
+//     </div>
+//     <div className="card-body">
+//       <p className="card-text">{job.details}</p>
+//       <div className="button-container">
+//         <a href={job.url} target="_blank" rel="noopener noreferrer" className="apply-button">
+//           Apply
+//         </a>
+//       </div>
+//     </div>
+//     <div className="card-footer">
+//       <span className="card-recruiter">{job.recruiter}</span>
+//       <span className="card-deadline">{job.deadline}</span>
+//     </div>
+//   </div>
+// );
+
+// export default Card;
+
+
+import defaultImage from "./images/adult-looking-horizontal-green-screen-computer-work-employee-with-headphones-working-from-home-with-chroma-key-device-mockup-template-isolated-background.jpg";
+
+const Card = ({ job }) => (
+  <div className="card">
+    <img src={job.image || defaultImage} alt={job.title} className="card-image" />
+    <div className="card-header">
+      <h3 className="card-title">{job.title}</h3>
     </div>
-    {showDelete && (
-      <button className="card-delete-btn" onClick={() => handleDelete(job)}>
-        DEL
-      </button>
-    )}
+    <div className="card-body">
+      <p className="card-text">{job.details}</p>
+      {/* <div className="button-container">
+        <a href={job.url} target="_blank" rel="noopener noreferrer" className="apply-button">
+          Apply
+        </a>
+      </div> */}
+    </div>
+    <div className="card-footer">
+      <span className="card-recruiter">{job.recruiter}</span>
+      <span className="card-deadline">{job.deadline}</span>
+    </div>
   </div>
 );
 
 export default Card;
+
+
+
 
 
 

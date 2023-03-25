@@ -30,16 +30,20 @@ function JobController({ user }) {
 
   return (
     <div>
-      <div className="job-controller-header">
+      {/* <div className="job-controller-header">
         <div className="job-controller-header-cell">Title</div>
         <div className="job-controller-header-cell">Recruiter</div>
         <div className="job-controller-header-cell">Skills</div>
         <div className="job-controller-header-cell">Deadline</div>
-      </div>
+      </div> */}
 
-      {currentJobs.map((job) => {
-        return <Card job={job} />;
-      })}
+      <div className="job-controller-body">
+      {currentJobs.map((job) => (
+    <div className="job-controller-column">
+      <Card job={job} />
+    </div>
+  ))}
+     </div>
 
       <div className="job-controller-button-container">
         {Array.from(Array(totalPages).keys()).map((pageNumber) => (

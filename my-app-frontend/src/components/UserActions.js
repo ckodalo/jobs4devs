@@ -118,11 +118,6 @@ const [formData, setFormData] = useState([]);
    //.then(res => res.json())
  }
    
- const specialLister = filteredUserJobs.map((job => {
-  console.log(job)
-  return <Card handleDelete={handleDelete} showDelete={showDelete} key = {job.id} job = {job}  />
-
-}))
 
 
   return (
@@ -154,7 +149,16 @@ const [formData, setFormData] = useState([]);
       <div style={headerCell}>Skills</div>
       <div style={headerCell}>Description</div>
     </div>
-   {specialLister}
+
+<div className="job-controller-body">
+{ filteredUserJobs.map((job) => ( 
+  <div className="job-controller-column">
+  <Card handleDelete={handleDelete} showDelete={showDelete} key = {job.id} job = {job}  />
+  </div>
+))}
+</div>
+
+  
   
       <div class="controls-container">
 

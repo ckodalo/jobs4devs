@@ -1,62 +1,78 @@
+// import React from "react";
+// import { NavLink } from "react-router-dom";
+
+// function NavBar({user}) {
+
+
+
+//   return (
+//     <div>
+
+//       <NavLink
+        
+//         to="/"
+//         exact      
+//       >
+  
+//         Home
+        
+//       </NavLink> 
+  
+//         {user ?    
+//          <NavLink
+//           to="/UserActions"
+    
+//           exact
+ 
+//           >
+//             Submit Job
+//         </NavLink> 
+
+
+//       :
+//       <NavLink
+//       to="/Submit"
+
+//       exact
+//       >
+//         Submit
+//     </NavLink>
+//       }
+//     </div>
+//   );
+// }
+
+// export default NavBar;
+
+
 import React from "react";
 import { NavLink } from "react-router-dom";
-import SearchTool from "./SearchTool";
 
-  //some styling navbar 
-  // const linkStyles = {
-  //   display: "inline-block",
-  //  width: "auto",
-  //  padding: "2px",
-  //  margin: "6px 6px px 120px",
-  //   textAlign: 'right',
-  //  textDecoration: "none",
-  // //  color: "999999",
-  //  };
-  
-
-function NavBar({user}) {
-
-
-
+function NavBar({ user }) {
   return (
-    <div>
-  {/* <SearchTool />  */}
+    <nav className="navbar">
+      <div className="navbar-logo">
+        <NavLink to="/" exact>
+          upstart
+        </NavLink>
+      </div>
 
-      <NavLink
-        
-        to="/"
-        exact
-        // style={linkStyles}
-      
+      <div className="navbar-links">
+        <NavLink to="/" exact>
+          Home
+        </NavLink>
 
-      >
-  
-        Home
-        
-      </NavLink> 
-  
-        {user ?    
-         <NavLink
-          to="/UserActions"
-    
-          exact
-          // style={linkStyles}
-          >
+        {user ? (
+          <NavLink to="/UserActions" exact>
             Submit Job
-        </NavLink> 
-
-
-      :
-      <NavLink
-      to="/Submit"
-
-      exact
-      // style={linkStyles}
-      >
-        Submit
-    </NavLink>
-      }
-    </div>
+          </NavLink>
+        ) : (
+          <NavLink to="/Submit" exact>
+            Submit
+          </NavLink>
+        )}
+      </div>
+    </nav>
   );
 }
 

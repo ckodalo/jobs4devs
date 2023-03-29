@@ -51,7 +51,7 @@ const Card = ({ job }) => (
   <div className="card">
     <img src={job.image || defaultImage} alt={job.title} className="card-image" />
     <div className="card-header">
-      <h3 className="card-title">{job.title}</h3>
+     <a href = {job.location}> <h4 className="card-title">{job.title}</h4> </a>
     </div>
     <div className="card-body">
       <p className="card-text">{job.details}</p>

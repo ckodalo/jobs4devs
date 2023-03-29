@@ -2,12 +2,13 @@
 
 /* Set up root variables */
 :root {
-  --primary-color: rgb(91, 164, 164);
-  --background-color: hsl(180, 52%, 96%);
-  --filter-table: hsl(180, 31%, 95%);
-  --dark-greyish: hsl(180, 8%, 52%);
-  --very-dark-greyish: hsl(180, 14%, 20%);
+  --primary-color: #4CAF50;
+  --secondary-color: #539165;
+  --accent-color: #E49393;
+  --background-color: #fff;
+  --text-color: #4d4d4d;
 }
+
 
 /* Set up default styles for all elements */
 *,

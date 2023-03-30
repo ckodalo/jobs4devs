@@ -108,33 +108,56 @@ a {
 .apply-button:hover {
   background-color: #1565c0;
 }
-
 .card-footer {
   background-color: var(--background-color);
   border-radius: 8px;
   color: var(--text-color);
-  font-size: 12px;
-  padding: 20px 8px 8px 0;
+  font-size: 14px;
+  font-weight: bold;
+  padding: 10px 0 0 0;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  position: relative;
+  z-index: 1;
 }
 
-.card-recruiter::before {
-  content: "Posted by ";
-  font-weight: bold;
+.card-footer span {
+  display: inline-block;
+  background-color: #e4e4e4;
+  color: #707070;
+  padding: 4px;
+  font-size: 10px;
+  font-weight: lighter;
+  border-radius: 8px;
+  margin-bottom: 10px;
 }
 
-.card-deadline::before {
-  content: "Deadline: ";
-  font-weight: bold;
+
+
+.card-footer span::before {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  top: 50%;
+  left: -4px;
+  width: calc(100% + 8px);
+  height: 1px;
+  
+  transform: translateY(-50%);
 }
 
-.card-icon {
-  color: #999;
-  margin-right: 8px;
+.card-footer span::after {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  top: 50%;
+  left: -2px;
+  width: calc(100% + 4px);
+  height: 1px;
+ 
+  transform: translateY(-50%);
 }
-
 
 .job-controller-body {
   display: flex;

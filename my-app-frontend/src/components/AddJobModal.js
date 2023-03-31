@@ -82,18 +82,14 @@ function AddJobModal({showModal, setShowModal, user, errorMessage, setErrorMessa
               <label htmlFor="job-title">Job Title:</label>
               <input type="text" id="title" name="title"  onBlur={handleChange} required />
 
-              <label htmlFor="recruiter">Recruiter:</label>
-              <input type="text" id="recruiter" name="recruiter"  onBlur={handleChange} required />
-
-              <label htmlFor="details">Skills:</label>
-              <textarea id="description" name="details"  onBlur={handleChange} required></textarea>
-
-              <label htmlFor="deadline">Deadline:</label>
-              <input type="date" id="deadline" name="deadline"  onBlur={handleChange} required />
-                      
               <label htmlFor="url">Url:</label>
               <input type="url" id="url" name="location"  onBlur={handleChange} required />
 
+              <label htmlFor="recruiter">Recruiter:</label>
+              <input type="text" id="recruiter" name="recruiter"  onBlur={handleChange} required />
+
+              <label htmlFor="details">Brief description:</label>
+              <textarea id="description" name="details"  onBlur={handleChange} required></textarea>
               <label htmlFor="category">Category:</label>
               <select id="category" name="category"  onBlur={handleChange} required>
                 <option value="">Select a category</option>
@@ -101,6 +97,10 @@ function AddJobModal({showModal, setShowModal, user, errorMessage, setErrorMessa
                 <option value="Category 2">Category 2</option>
                 <option value="Category 3">Category 3</option>
               </select>
+
+              <label htmlFor="deadline">Deadline:</label>
+              <input type="date" id="deadline" name="deadline"  onBlur={handleChange} required />
+
 
               <button type="submit">Add Job</button>
             </form>

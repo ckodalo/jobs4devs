@@ -13,10 +13,11 @@ function App() {
 
   const [errorMessage, setErrorMessage] = useState("");
 
+
   console.log(user);
 
   useEffect(() => {
-    fetch("http://127.0.0.1:3000/me").then((response) => {
+    fetch(`${process.env.REACT_APP_API_URL}/me`).then((response) => {
       if (response.ok) {
         response.json().then((user) => setUser(user));
       }

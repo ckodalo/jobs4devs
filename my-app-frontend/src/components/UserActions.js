@@ -33,7 +33,7 @@ function UserActions({user, setUser, errorMessage, setErrorMessage}) {
  //fetch job(s) with a particular user id
    useEffect(() => {
     
-     fetch("/jobs")
+     fetch(`${process.env.REACT_APP_API_URL}/jobs`)
    
        .then(response => response.json())
        .then(data => setUserJobs(data))
@@ -69,7 +69,7 @@ const [formData, setFormData] = useState([]);
   function handlePostJob(e) {
     e.preventDefault();
 //   userData.id === user_id ?  
-    fetch("/jobs", {
+    fetch(`${process.env.REACT_APP_API_URL}/jobs`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -96,7 +96,7 @@ const [formData, setFormData] = useState([]);
      //e.stopPropagation()
      console.log(targetJob)
     //e.preventDefault();
-     fetch(`/jobs/${targetJob.id}`, {
+     fetch(`${process.env.REACT_APP_API_URL}/jobs/${targetJob.id}`, {
          method: "DELETE",
       })
      .then(res => res.json())
@@ -106,7 +106,7 @@ const [formData, setFormData] = useState([]);
 
    //LOGOUT FUNCTIONALITY
    function handleLogOut () {
-    fetch("/logout", {
+    fetch(`${process.env.REACT_APP_API_URL}/logout`, {
       method: "DELETE",
    })
    .then((r) => {

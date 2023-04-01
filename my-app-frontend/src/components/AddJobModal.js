@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
+
 function AddJobModal({showModal, setShowModal, user, errorMessage, setErrorMessage}) {
   // [showModal, setShowModal] = useState(false);
 
@@ -26,7 +27,7 @@ function AddJobModal({showModal, setShowModal, user, errorMessage, setErrorMessa
   const handleSubmit = (event) => {
     event.preventDefault();
     // Handle form submission logic here
-    fetch("/jobs", {
+    fetch(`${process.env.REACT_APP_API_URL}/jobs`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -85,6 +86,10 @@ function AddJobModal({showModal, setShowModal, user, errorMessage, setErrorMessa
               <label htmlFor="url">Url:</label>
               <input type="url" id="url" name="location"  onBlur={handleChange} required />
 
+              <label htmlFor="url">Image:</label>
+              <input type="url" id="image" name="image"  placeholder="Enter the URL of an image (e.g. https://example.com/image.jpg)" onBlur={handleChange} />
+
+              
               <label htmlFor="recruiter">Recruiter:</label>
               <input type="text" id="recruiter" name="recruiter"  onBlur={handleChange} required />
 

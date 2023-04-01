@@ -6,7 +6,6 @@ import PostEditor from "./PostEditor";
 import Card from "./Card";
 import UserActions from "./UserActions";
 
-
 function JobController({ user }) {
   const [jobs, setJobs] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
@@ -23,7 +22,7 @@ function JobController({ user }) {
   };
 
   useEffect(() => {
-    fetch("/jobs")
+    fetch(`${process.env.REACT_APP_API_URL}/jobs`)
       .then((response) => response.json())
       .then((data) => setJobs(data));
   }, []);

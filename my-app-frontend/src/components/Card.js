@@ -48,10 +48,13 @@ import React from "react";
 import defaultImage from "./images/adult-looking-horizontal-green-screen-computer-work-employee-with-headphones-working-from-home-with-chroma-key-device-mockup-template-isolated-background.jpg";
 
 const Card = ({ job }) => (
+
+  
   <div className="card">
+    
     <img src={job.image || defaultImage} alt={job.title} className="card-image" />
     <div className="card-header">
-     <a href = {job.location}> <h4 className="card-title">{job.title}</h4> </a>
+     <a href = {job.location}  target="_blank" rel="noopener noreferrer"> <h4 className="card-title">{job.title}</h4> </a>
      <div className="card-footer">
      <span className="card-recruiter">{job.recruiter}</span>
      <span className="card-deadline">{job.deadline}</span>

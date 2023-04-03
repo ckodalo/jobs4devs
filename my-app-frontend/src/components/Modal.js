@@ -9,7 +9,7 @@ const [submitUrlSelected, setUrlSelected] = useState(false);
   return (
     <div>
       <PostEditor postJobSelected={postJobSelected}  setPostJobSelected={setPostJobSelected}/>
-      {/* <button onClick={() => setIsModalOpen(true)}>Submit Job</button> */}
+       {/* <button onClick={() => setIsModalOpen(true)}>Submit Job</button> */}
       {isModalOpen && (
         <div className="modal">
           <div className="modal-content">

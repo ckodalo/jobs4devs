@@ -37,26 +37,12 @@
 }
 
 .navbar-links a:hover {
-  background-color: #ffcc00;
+  background-color: var(--secondary-color);
   color: #242424;
 }
 
-@media only screen and (max-width: 600px) {
-  .navbar {
-    flex-direction: column;
-    height: auto;
-    padding: 20px;
-  }
-  
-  .navbar-links {
-    flex-direction: column;
-    margin-top: 20px;
-  }
-  
-  .navbar-links a {
-    margin: 10px 0;
-  }
-}
+
+
 
 
 // .navbar {

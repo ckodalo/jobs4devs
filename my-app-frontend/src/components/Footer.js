@@ -22,6 +22,9 @@ import { FaTwitter, FaFacebook, FaInstagram } from "react-icons/fa";
 
 const Footer = () => (
   <footer style={{
+    position: "fixed",
+   
+    width: "100%",
     display: "flex",
     flexDirection: "column",
     justifyContent: "center",
@@ -40,7 +43,7 @@ const Footer = () => (
     }}>
       <h2 style={{ margin: 0 }}>About Us</h2>
       <p style={{ textAlign: "center", maxWidth: "300px", marginTop: "10px" }}>
-        LightDuty (LD) is a job board platform connecting job seekers with employers.
+        Discover the best jobs in Kenya
       </p>
     </div>
     <div style={{
@@ -60,7 +63,7 @@ const Footer = () => (
       </a>
     </div>
     <div style={{ textAlign: "center" }}>
-      <p style={{ margin: "0" }}>© 2023 LightDuty, Inc. All rights reserved.</p>
+      <p style={{ margin: "0" }}>© 2023 upstart, Inc. All rights reserved.</p>
     </div>
   </footer>
 );

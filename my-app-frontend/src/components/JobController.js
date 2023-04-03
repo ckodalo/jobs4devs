@@ -20,6 +20,7 @@ function JobController({ user }) {
   const handlePageClick = (pageNumber) => {
     setCurrentPage(pageNumber);
   };
+  console.log(process.env.REACT_APP_API_URL);
 
   useEffect(() => {
     fetch(`${process.env.REACT_APP_API_URL}/jobs`)

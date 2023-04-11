@@ -16,6 +16,7 @@ function UserActions({user, setUser, errorMessage, setErrorMessage}) {
   
   const [isModalOpen, setIsModalOpen] = useState(false);
 
+
   const [showModal, setShowModal] = useState(false);
 
   // const handleOpenModal = () => setShowModal(true);
@@ -26,7 +27,7 @@ function UserActions({user, setUser, errorMessage, setErrorMessage}) {
 
   const [user_id, setUser_Id] = useState(null)
   const [userJobs, setUserJobs] = useState([])
-  const [showDelete, setShowDelete] = useState([false])
+  const [showDelete, setShowDelete] = useState(true)
 
  console.log(user)
 
@@ -153,7 +154,7 @@ const [formData, setFormData] = useState([]);
 <div className="job-controller-body">
 { filteredUserJobs.map((job) => ( 
   <div className="job-controller-column">
-  <Card handleDelete={handleDelete} showDelete={showDelete} key = {job.id} job = {job}  />
+  <Card job = {job} key = {job.id} showDelete = {showDelete} handleDelete={handleDelete}  />
   </div>
 ))}
 </div>

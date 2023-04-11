@@ -47,7 +47,10 @@ import React from "react";
 
 import defaultImage from "./images/adult-looking-horizontal-green-screen-computer-work-employee-with-headphones-working-from-home-with-chroma-key-device-mockup-template-isolated-background.jpg";
 
-const Card = ({ job }) => (
+const Card = ({ job, showDelete, handleDelete }) => (
+
+  
+  showDelete ?
 
   
   <div className="card">
@@ -62,14 +65,33 @@ const Card = ({ job }) => (
     </div>
     <div className="card-body">
       <p className="card-text">{job.details}</p>
-      {/* <div className="button-container">
-        <a href={job.url} target="_blank" rel="noopener noreferrer" className="apply-button">
-          Apply
+       <div className="button-container">
+        <a onClick={(e) => { 
+          e.preventDefault()
+         handleDelete(job)
+          }} href={job.url} target="_blank" rel="noopener noreferrer" className="apply-button">
+          Delete
         </a>
-      </div> */}
+      </div> 
     </div>
    
   </div>
+
+  :
+  <div className="card">
+    
+  <img src={job.image || defaultImage} alt={job.title} className="card-image" />
+  <div className="card-header">
+   <a href = {job.location}  target="_blank" rel="noopener noreferrer"> <h4 className="card-title">{job.title}</h4> </a>
+   <div className="card-footer">
+   <span className="card-recruiter">{job.recruiter}</span>
+   <span className="card-deadline">{job.deadline}</span>
+   </div>
+  </div>
+  <div className="card-body">
+    <p className="card-text">{job.details}</p>
+  </div> 
+</div>
 );
 
 export default Card;

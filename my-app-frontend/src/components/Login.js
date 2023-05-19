@@ -24,12 +24,10 @@ function Login({user, setUser, errorMessage, setErrorMessage}) {
 // const [newUser, setNewUser] = useState("")
 // const [newUserPassword, setNewUserPassword] = useState("")
 const [passwordConfirmation, setPasswordConfirmation] = useState("");
-
-// fetch(`${process.env.REACT_APP_API_URL}/submit`
  
   function handleSubmit(e) {
     e.preventDefault();
-    fetch("/submit", {
+    fetch(`${process.env.REACT_APP_API_URL}/submit`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -78,7 +76,7 @@ const [passwordConfirmation, setPasswordConfirmation] = useState("");
 
   function handlePostNewUser(e) {
     e.preventDefault();
-    fetch("/submit/new", {
+    fetch(`${process.env.REACT_APP_API_URL}/submit/new`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

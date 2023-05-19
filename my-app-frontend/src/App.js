@@ -18,7 +18,7 @@ function App() {
   console.log(process.env.REACT_APP_API_URL);
 
   useEffect(() => {
-    fetch("/me").then((response) => {
+    fetch(`${process.env.REACT_APP_API_URL}/me`).then((response) => {
       if (response.ok) {
         response.json().then((data) => setUser(data));
       }

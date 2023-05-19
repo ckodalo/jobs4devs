@@ -22,8 +22,12 @@ function JobController({ user }) {
   };
   console.log(process.env.REACT_APP_API_URL);
 
+  
+
+  // fetch(`${process.env.REACT_APP_API_URL}/jobs`)
+
   useEffect(() => {
-    fetch(`${process.env.REACT_APP_API_URL}/jobs`)
+    fetch("/jobs")
       .then((response) => response.json())
       .then((data) => setJobs(data));
   }, []);

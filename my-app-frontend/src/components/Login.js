@@ -6,6 +6,7 @@ import AddJobForm from './AddJobForm'
 import Job from './Job'
 import { useNavigate } from 'react-router'
 import NavBar from './NavBar'
+import UserActions from './UserActions'
 
 
 
@@ -23,10 +24,12 @@ function Login({user, setUser, errorMessage, setErrorMessage}) {
 // const [newUser, setNewUser] = useState("")
 // const [newUserPassword, setNewUserPassword] = useState("")
 const [passwordConfirmation, setPasswordConfirmation] = useState("");
+
+// fetch(`${process.env.REACT_APP_API_URL}/submit`
  
   function handleSubmit(e) {
     e.preventDefault();
-    fetch(`${process.env.REACT_APP_API_URL}/submit`, {
+    fetch("/submit", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -75,7 +78,7 @@ const [passwordConfirmation, setPasswordConfirmation] = useState("");
 
   function handlePostNewUser(e) {
     e.preventDefault();
-    fetch(`${process.env.REACT_APP_API_URL}/submit/new`, {
+    fetch("/submit/new", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -98,6 +101,8 @@ const [passwordConfirmation, setPasswordConfirmation] = useState("");
       {/* <div className="header">
           <NavBar />
         </div> */}
+
+   
 
 {errorMessage && (
         <div className="error-message">
@@ -134,6 +139,8 @@ const [passwordConfirmation, setPasswordConfirmation] = useState("");
   <button type="submit" onClick={handlePostNewUser}>Add Your Name
         </button>
                 </form>
+
+              
     </div>
   );
 }

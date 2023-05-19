@@ -31,18 +31,19 @@ function UserActions({user, setUser, errorMessage, setErrorMessage}) {
 
  console.log(user)
 
+//  fetch(`${process.env.REACT_APP_API_URL}/jobs`)
+
  //fetch job(s) with a particular user id
    useEffect(() => {
     
-     fetch(`${process.env.REACT_APP_API_URL}/jobs`)
+     fetch("/jobs")
    
        .then(response => response.json())
        .then(data => setUserJobs(data))
    }, [])
-
    console.log(userJobs)
 //filter jobs by id 
-const filteredUserJobs = userJobs.filter(job => job.user_id === user.id)
+// const filteredUserJobs = userJobs.filter(job => job.user_id === user.id)
 
 
   
@@ -70,7 +71,7 @@ const [formData, setFormData] = useState([]);
   function handlePostJob(e) {
     e.preventDefault();
 //   userData.id === user_id ?  
-    fetch(`${process.env.REACT_APP_API_URL}/jobs`, {
+    fetch("/jobs", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -97,7 +98,7 @@ const [formData, setFormData] = useState([]);
      //e.stopPropagation()
      console.log(targetJob)
     //e.preventDefault();
-     fetch(`${process.env.REACT_APP_API_URL}/jobs/${targetJob.id}`, {
+     fetch(`/jobs/${targetJob.id}`, {
          method: "DELETE",
       })
      .then(res => res.json())
@@ -107,8 +108,12 @@ const [formData, setFormData] = useState([]);
 
    //LOGOUT FUNCTIONALITY
    function handleLogOut () {
-    fetch(`${process.env.REACT_APP_API_URL}/logout`, {
+    fetch("/logout", {
       method: "DELETE",
+
+      headers: {
+        "Content-Type": "application/json"
+      }
    })
    .then((r) => {
      if (r.ok) {
@@ -152,7 +157,7 @@ const [formData, setFormData] = useState([]);
     </div>
 
 <div className="job-controller-body">
-{ filteredUserJobs.map((job) => ( 
+{ userJobs.map((job) => ( 
   <div className="job-controller-column">
   <Card job = {job} key = {job.id} showDelete = {showDelete} handleDelete={handleDelete}  />
   </div>

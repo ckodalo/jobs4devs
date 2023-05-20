@@ -32,6 +32,7 @@ const [passwordConfirmation, setPasswordConfirmation] = useState("");
       headers: {
         "Content-Type": "application/json",
       },
+        credentials: "include",
       body: JSON.stringify({name, password}),
     })
       .then((r) => {

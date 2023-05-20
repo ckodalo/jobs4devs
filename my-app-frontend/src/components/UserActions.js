@@ -111,7 +111,8 @@ const [formData, setFormData] = useState([]);
 
       headers: {
         "Content-Type": "application/json"
-      }
+      },
+      credentials: "include" // or credentials: "same-origin"
    })
    .then((r) => {
      if (r.ok) {
